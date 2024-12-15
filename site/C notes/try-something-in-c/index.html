@@ -71,7 +71,7 @@
 
         <div class="container">
             <div class="row">
-                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary" >
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
             <span class="fa fa-angle-down"></span>
@@ -79,7 +79,7 @@
     </div>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary" style="max-height: 70vh; overflow-y: auto;">
         <ul class="nav flex-column">
             
             <li class="nav-item" data-bs-level="1"><a href="#try-something-in-c" class="nav-link">Try something in C</a>
@@ -134,15 +134,19 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#scanf" class="nav-link">scanf 的格式控制</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#_9" class="nav-link">空白字符和普通字符</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_9" class="nav-link">空白字符</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_10" class="nav-link">赋值禁止字符 *</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_10" class="nav-link">普通字符</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_11" class="nav-link">指定最大域宽</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_11" class="nav-link">赋值禁止字符 *</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_12" class="nav-link">指定最大域宽</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -154,23 +158,23 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#_12" class="nav-link">伪随机数</a>
+            <li class="nav-item" data-bs-level="1"><a href="#_13" class="nav-link">伪随机数</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#_13" class="nav-link">实参传递</a>
+            <li class="nav-item" data-bs-level="1"><a href="#_14" class="nav-link">实参传递</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#_14" class="nav-link">实参求值顺序由编译器决定</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_15" class="nav-link">实参求值顺序由编译器决定</a>
               <ul class="nav flex-column">
               </ul>
             </li>
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#_15" class="nav-link">内层变量与外层变量重名，外层的变量被屏蔽</a>
+            <li class="nav-item" data-bs-level="1"><a href="#_16" class="nav-link">内层变量与外层变量重名，外层的变量被屏蔽</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#_16" class="nav-link">而在同一层重新定义一个重名变量会报错</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_17" class="nav-link">而在同一层重新定义一个重名变量会报错</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -182,9 +186,9 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#_17" class="nav-link">宏</a>
+            <li class="nav-item" data-bs-level="1"><a href="#_18" class="nav-link">宏</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#_18" class="nav-link">条件编译</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_19" class="nav-link">条件编译</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -193,28 +197,28 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#if" class="nav-link">if 可以接一些表达式，或是宏定义的“函数”，但是此时传入的实参必须在宏中定义</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#_19" class="nav-link">预定义宏</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_20" class="nav-link">预定义宏</a>
               <ul class="nav flex-column">
               </ul>
             </li>
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#_20" class="nav-link">参数数目可变的函数</a>
+            <li class="nav-item" data-bs-level="1"><a href="#_21" class="nav-link">参数数目可变的函数</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#_21" class="nav-link">两种定义字符串的方法</a>
+            <li class="nav-item" data-bs-level="1"><a href="#_22" class="nav-link">两种定义字符串的方法</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#_22" class="nav-link">二维数组所占内存是连续的</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_23" class="nav-link">二维数组所占内存是连续的</a>
               <ul class="nav flex-column">
               </ul>
             </li>
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#_23" class="nav-link">联合与字段</a>
+            <li class="nav-item" data-bs-level="1"><a href="#_24" class="nav-link">联合与字段</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -235,17 +239,12 @@
 
 <h1 id="try-something-in-c">Try something in C</h1>
 <p><em>一些值得尝试的代码</em></p>
-<aside>
-👉
-
-**Welcome to my C programming notes!**
-
-This is a collection of interesting C code snippets and concepts I've gathered. Feel free to explore, learn, and experiment with these examples. This page is being continuously updated, so be sure to check back often for new content!
-
-If you have any questions, suggestions, or want to discuss any of these topics further, please don't hesitate to make a comment or reach out to me. Your input is valuable and appreciated! 
-
-</aside>
-
+<blockquote>
+<p>👉</p>
+<p><strong>Welcome to my C programming notes!</strong></p>
+<p>This is a collection of interesting C code snippets and concepts I've gathered. Feel &gt;free to explore, learn, and experiment with these examples. This page is being &gt;continuously updated, so be sure to check back often for new content!</p>
+<p>If you have any questions, suggestions, or want to discuss any of these topics further, &gt;please don't hesitate to make a comment or reach out to me. Your input is valuable and &gt;appreciated! </p>
+</blockquote>
 <h2 id="_1">响铃符，在外部终端运行时会发出声音🔔</h2>
 <pre><code class="language-c">#include&lt;stdio.h&gt;
 int main(){
@@ -263,13 +262,10 @@ int main(){
     return 0;
 }
 </code></pre>
-<aside>
-⚠️
-
-float 和 double 不能进行位运算和取模（或被取模）操作
-
-</aside>
-
+<blockquote>
+<p>⚠️</p>
+<p>float 和 double 不能进行位运算和取模（或被取模）操作</p>
+</blockquote>
 <h2 id="0">字符串末尾都是空字符 ‘\0’</h2>
 <pre><code class="language-c">#include&lt;stdio.h&gt;
 int main(){
@@ -395,7 +391,7 @@ int main()
 </code></pre>
 <p>week 的值不能为6 <code>error: invalid conversion from 'int' to 'week' [-fpermissive]</code></p>
 <h1 id="scanf">scanf 的格式控制</h1>
-<h2 id="_9">空白字符和普通字符</h2>
+<h2 id="_9">空白字符</h2>
 <p>以下的表达全都等价</p>
 <pre><code class="language-c">scanf(&quot;%s%s&quot;,&amp;a,&amp;b);
 scanf(&quot;%s %s&quot;,&amp;a,&amp;b);
@@ -405,29 +401,15 @@ scanf(&quot;%s\n \t\n\t     %s&quot;,&amp;a,&amp;b);
 </code></pre>
 <p>空白字符: <code>\n</code> <code>\t</code> <code>' '</code> 的作用都相同，连续的空白字符将被视为一处。</p>
 <p>scanf 读取数字，字符串时会自动跳过空白字符。</p>
-<aside>
-⚠️
-
-当读取`%c`时，空白字符可用于跳过输入中的空白字符
-
-e.g. 输入`a b`:
-
-
+<blockquote>
+<p>⚠️</p>
+<p>当读取<code>%c</code>时，空白字符可用于跳过输入中的空白字符</p>
+<p>e.g. 输入<code>a b</code>:</p>
+</blockquote>
 <pre><code class="language-c">scanf(&quot;%c%c&quot;,&amp;a,&amp;b); //a='a', b=' '
 scanf(&quot;%c %c&quot;,&amp;a,&amp;b); //a='a', b='b'
 </code></pre>
-
-
-*credit to zzc*
-
-与其他输入方式混用
-
-e.g. input:
-
-`hello`
-`world`
-
-
+<p>与其他输入方式混用，e.g. input: <code>hello world</code></p>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 
 int main() {
@@ -438,12 +420,8 @@ int main() {
     return 0;
 }
 </code></pre>
-
-
-改为`scanf("%s ",a);`,b=”world”
-
-</aside>
-
+<p>改为<code>scanf("%s ",a);</code>,b=”world”</p>
+<h2 id="_10">普通字符</h2>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 char a[100],b[100];
 int main()
@@ -455,7 +433,7 @@ int main()
 }
 </code></pre>
 <p>表达式加入了普通字符，必须输入 <code>abcde and fghij</code> 才能正确输入a和b</p>
-<h2 id="_10">赋值禁止字符 *</h2>
+<h2 id="_11">赋值禁止字符 *</h2>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 char a,b;
 int main()
@@ -467,7 +445,7 @@ int main()
 }
 </code></pre>
 <p>input <code>a bcdef g</code> output <code>a g</code></p>
-<h2 id="_11">指定最大域宽</h2>
+<h2 id="_12">指定最大域宽</h2>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 char a[100],b[100];
 int main()
@@ -484,7 +462,7 @@ int main()
 </code></pre>
 <p>当 <code>b</code> 为空时，相当于填入了非空常量，即循环将一直进行（除非遇到转移语句）</p>
 <p><code>a</code> <code>c</code> 为空时，将不进行任何操作</p>
-<h1 id="_12">伪随机数</h1>
+<h1 id="_13">伪随机数</h1>
 <p><strong><em>线性同余法：</em></strong></p>
 <p>$$
 a_0=seed, a_n=(A\times a_{n+1}+B)\%M.
@@ -494,8 +472,8 @@ $$</p>
 <pre><code class="language-c">srand(time(NULL)); //用时间做种子，保证每次运行时不同
 srand(a); //使用固定的种子，生成的序列是固定的
 </code></pre>
-<h1 id="_13">实参传递</h1>
-<h2 id="_14">实参求值顺序由编译器决定</h2>
+<h1 id="_14">实参传递</h1>
+<h2 id="_15">实参求值顺序由编译器决定</h2>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 
 void printab(int a,int b){
@@ -520,7 +498,7 @@ int main()
 }
 
 </code></pre>
-<h1 id="_15">内层变量与外层变量重名，外层的变量被屏蔽</h1>
+<h1 id="_16">内层变量与外层变量重名，外层的变量被屏蔽</h1>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 
 int main()
@@ -534,7 +512,7 @@ int main()
     return 0;
 }
 </code></pre>
-<h2 id="_16">而在同一层重新定义一个重名变量会报错</h2>
+<h2 id="_17">而在同一层重新定义一个重名变量会报错</h2>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 
 int main()
@@ -574,8 +552,8 @@ int main()
 }
 
 </code></pre>
-<h1 id="_17">宏</h1>
-<h2 id="_18">条件编译</h2>
+<h1 id="_18">宏</h1>
+<h2 id="_19">条件编译</h2>
 <p>重复定义宏时，编译预处理时从头到尾顺序操作，即每个位置a的值为上一次定义的值，但会收到一条警告</p>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 #define a 1
@@ -628,7 +606,7 @@ int main()
     return 0;
 }
 </code></pre>
-<h2 id="_19">预定义宏</h2>
+<h2 id="_20">预定义宏</h2>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 
 int main()
@@ -639,7 +617,7 @@ int main()
 }
 
 </code></pre>
-<h1 id="_20">参数数目可变的函数</h1>
+<h1 id="_21">参数数目可变的函数</h1>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 #include &lt;stdarg.h&gt;
 
@@ -684,7 +662,7 @@ int main()
 }
 
 </code></pre>
-<h1 id="_21">两种定义字符串的方法</h1>
+<h1 id="_22">两种定义字符串的方法</h1>
 <p>method 1:</p>
 <pre><code class="language-cpp">#include &lt;stdio.h&gt;
 
@@ -715,7 +693,7 @@ int main()
 }
 </code></pre>
 <p>字符串可修改，s1不可修改</p>
-<h2 id="_22">二维数组所占内存是连续的</h2>
+<h2 id="_23">二维数组所占内存是连续的</h2>
 <pre><code class="language-cpp">#include &lt;stdio.h&gt;
 
 int main()
@@ -727,7 +705,7 @@ int main()
     }   
 }
 </code></pre>
-<h1 id="_23">联合与字段</h1>
+<h1 id="_24">联合与字段</h1>
 <p>联合可以将同一段存储空间以多种类型的数据存取；字段可以将一段内存按位宽拆分。</p>
 <p>💡可以利用联合与字段简便的实现01的枚举：</p>
 <pre><code class="language-cpp">#include &lt;stdio.h&gt;

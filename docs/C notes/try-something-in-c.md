@@ -2,16 +2,15 @@
 
 *一些值得尝试的代码*
 
-<aside>
-👉
 
-**Welcome to my C programming notes!**
+>👉
+>
+>**Welcome to my C programming notes!**
+>
+>This is a collection of interesting C code snippets and concepts I've gathered. Feel >free to explore, learn, and experiment with these examples. This page is being >continuously updated, so be sure to check back often for new content!
+>
+>If you have any questions, suggestions, or want to discuss any of these topics further, >please don't hesitate to make a comment or reach out to me. Your input is valuable and >appreciated! 
 
-This is a collection of interesting C code snippets and concepts I've gathered. Feel free to explore, learn, and experiment with these examples. This page is being continuously updated, so be sure to check back often for new content!
-
-If you have any questions, suggestions, or want to discuss any of these topics further, please don't hesitate to make a comment or reach out to me. Your input is valuable and appreciated! 
-
-</aside>
 
 ## 响铃符，在外部终端运行时会发出声音🔔
 
@@ -36,12 +35,12 @@ int main(){
 }
 ```
 
-<aside>
-⚠️
 
-float 和 double 不能进行位运算和取模（或被取模）操作
+>⚠️
+>
+>float 和 double 不能进行位运算和取模（或被取模）操作
 
-</aside>
+
 
 ## 字符串末尾都是空字符 ‘\0’
 
@@ -205,7 +204,7 @@ week 的值不能为6 `error: invalid conversion from 'int' to 'week' [-fpermiss
 
 # scanf 的格式控制
 
-## 空白字符和普通字符
+## 空白字符
 
 以下的表达全都等价
 
@@ -221,11 +220,11 @@ scanf("%s\n \t\n\t     %s",&a,&b);
 
 scanf 读取数字，字符串时会自动跳过空白字符。
 
-<aside>
-⚠️
 
-当读取`%c`时，空白字符可用于跳过输入中的空白字符
-
+>⚠️
+>
+>当读取`%c`时，空白字符可用于跳过输入中的空白字符
+>
 e.g. 输入`a b`:
 
 ```c
@@ -233,14 +232,7 @@ scanf("%c%c",&a,&b); //a='a', b=' '
 scanf("%c %c",&a,&b); //a='a', b='b'
 ```
 
-*credit to zzc*
-
-与其他输入方式混用
-
-e.g. input:
-
-`hello`
-`world`
+与其他输入方式混用，e.g. input: `hello world`
 
 ```c
 #include <stdio.h>
@@ -256,7 +248,7 @@ int main() {
 
 改为`scanf("%s ",a);`,b=”world”
 
-</aside>
+## 普通字符
 
 ```c
 #include <stdio.h>
