@@ -65,8 +65,10 @@ pre, .rst-content tt {
     max-width: 100%;
     background-color: var(--bs-body-bg);
     border: solid 1px var(--bs-border-color);
+    border-radius: 5px;
     color: var(--bs-body-color);
     overflow-x: auto;
+    box-shadow: 0 0 5px rgba(0,0,0,.1);
 }
 
 code.code-large, .rst-content tt.code-large {
@@ -75,8 +77,9 @@ code.code-large, .rst-content tt.code-large {
 
 code {
     padding: 2px 5px;
-    background-color: rgba(var(--bs-body-bg-rgb), 0.75);
+    background-color: #efefef;
     border: solid 1px var(--bs-border-color);
+    border-radius: 5px;
     color: var(--bs-body-color);
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -220,6 +223,7 @@ blockquote {
     padding-left: 10px;
     border-left: 4px solid #ffa200;
     border-radius: 8px;
+    box-shadow: 0 0 6px rgba(0,0,0,.1);
 }
 
 .admonition, details {
