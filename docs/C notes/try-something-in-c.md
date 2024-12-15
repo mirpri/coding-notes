@@ -7,9 +7,9 @@
 >
 >**Welcome to my C programming notes!**
 >
->This is a collection of interesting C code snippets and concepts I've gathered. Feel >free to explore, learn, and experiment with these examples. This page is being >continuously updated, so be sure to check back often for new content!
+>This is a collection of interesting C code snippets and concepts I've gathered. Feel free to explore, learn, and experiment with these examples. This page is being continuously updated, so be sure to check back often for new content!
 >
->If you have any questions, suggestions, or want to discuss any of these topics further, >please don't hesitate to make a comment or reach out to me. Your input is valuable and >appreciated! 
+>If you have any questions, suggestions, or want to discuss any of these topics further, please don't hesitate to make a comment or reach out to me. Your input is valuable and appreciated! 
 
 
 ## 响铃符，在外部终端运行时会发出声音🔔
@@ -224,7 +224,7 @@ scanf 读取数字，字符串时会自动跳过空白字符。
 >⚠️
 >
 >当读取`%c`时，空白字符可用于跳过输入中的空白字符
->
+
 e.g. 输入`a b`:
 
 ```c
@@ -373,7 +373,7 @@ int main()
 }
 ```
 
-## 而在同一层重新定义一个重名变量会报错
+## 在同一层重新定义一个重名变量会报错
 
 ```c
 #include <stdio.h>
