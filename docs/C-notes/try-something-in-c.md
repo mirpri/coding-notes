@@ -12,12 +12,33 @@
 >If you have any questions, suggestions, or want to discuss any of these topics further, please don't hesitate to make a comment or reach out to me. Your input is valuable and appreciated! 
 
 
-## 响铃符，在外部终端运行时会发出声音🔔
+## 特殊的字符
+### 响铃符，在外部终端运行时会发出声音🔔
 
 ```c
 #include<stdio.h>
 int main(){
     printf("\a");
+    return 0;
+}
+```
+
+### '\b' 回退光标
+
+实现百分比从0变化到100：
+
+```c
+#include <stdio.h>
+#include <windows.h>
+
+int main(){
+    printf("  0%%");
+    for (int i = 1; i <= 100; i++)
+    {
+        printf("\b\b\b\b");
+        printf("%3d%%",i);
+        Sleep(100);
+    }    
     return 0;
 }
 ```
