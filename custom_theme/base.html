@@ -67,6 +67,18 @@
 
       {%- block extrahead %} {% endblock %}
     </head>
+    
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-33SKNTLRN6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-33SKNTLRN6');
+    </script>
+
 
     <body{% if page and page.is_homepage %} class="homepage"{% endif %}>
         <div class="navbar fixed-top navbar-expand-lg navbar-{% if config.theme.nav_style == "light" %}light{% else %}dark{% endif %} bg-{{ config.theme.nav_style }}">
