@@ -54,7 +54,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../classic-codes/" class="dropdown-item">Elegant Codes</a>
+    <a href="../elegant-codes/" class="dropdown-item">Elegant Codes</a>
 </li>
                                     
 <li>
@@ -71,7 +71,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../classic-codes/" class="nav-link">
+                                <a rel="prev" href="../elegant-codes/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -100,6 +100,11 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#try-something-in-c" class="nav-link">Try something in C</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#basics" class="nav-link">Basics</a>
+              <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">特殊的字符</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="3"><a href="#_2" class="nav-link">响铃符，在外部终端运行时会发出声音🔔</a>
@@ -124,73 +129,42 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">开一个长度为变量的数组</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">局部变量是未经初始化的，全局变量被初始化为零。</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_6" class="nav-link">用空白列表初始化局部数组</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#enum" class="nav-link">枚举 Enum</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="3"><a href="#_7" class="nav-link">不出现枚举名</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="3"><a href="#_8" class="nav-link">指定枚举数值时重复</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="3"><a href="#_9" class="nav-link">当枚举的数值不连续时枚举变量的范围</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#scanf" class="nav-link">scanf 的格式控制</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="3"><a href="#_10" class="nav-link">空白字符</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="3"><a href="#_11" class="nav-link">普通字符</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="3"><a href="#_12" class="nav-link">赋值禁止字符 *</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="3"><a href="#_13" class="nav-link">指定最大域宽</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
             <li class="nav-item" data-bs-level="2"><a href="#for" class="nav-link">带有空语句的for</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_14" class="nav-link">伪随机数</a>
+            <li class="nav-item" data-bs-level="2"><a href="#scanf" class="nav-link">scanf 的格式控制</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#_4" class="nav-link">空白字符</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_15" class="nav-link">实参传递</a>
+            <li class="nav-item" data-bs-level="3"><a href="#_5" class="nav-link">普通字符</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="3"><a href="#_16" class="nav-link">实参求值顺序由编译器决定</a>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#_6" class="nav-link">赋值禁止字符 *</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#_7" class="nav-link">指定最大域宽</a>
               <ul class="nav flex-column">
               </ul>
             </li>
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_17" class="nav-link">内层变量与外层变量重名，外层的变量被屏蔽</a>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#variables-and-pointers" class="nav-link">Variables and pointers</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="3"><a href="#_18" class="nav-link">在同一层重新定义一个重名变量会报错</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_8" class="nav-link">变量被赋给超出范围的值，自动取模</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_9" class="nav-link">内层变量与外层变量重名，外层的变量被屏蔽</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#_10" class="nav-link">在同一层重新定义一个重名变量会报错</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -200,9 +174,97 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_19" class="nav-link">宏</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_11" class="nav-link">两种定义字符串的方法</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="3"><a href="#_20" class="nav-link">条件编译</a>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#void" class="nav-link">无类型指针 void *</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_12" class="nav-link">复杂的指针声明</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#array" class="nav-link">Array</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_13" class="nav-link">开一个长度为变量的数组</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_14" class="nav-link">二维数组所占内存是连续的</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_15" class="nav-link">局部变量是未经初始化的，全局变量被初始化为零。</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_16" class="nav-link">数组的初始化</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#_17" class="nav-link">用空白列表初始化局部数组</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#_18" class="nav-link">部分初始化数组</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#_19" class="nav-link">初始化指定下标的元素</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#structure" class="nav-link">Structure</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#enum" class="nav-link">枚举 Enum</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#_20" class="nav-link">不出现枚举名</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#_21" class="nav-link">指定枚举数值时重复</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#_22" class="nav-link">当枚举的数值不连续时枚举变量的范围</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_23" class="nav-link">联合与字段</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#function" class="nav-link">Function</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_24" class="nav-link">实参求值顺序由编译器决定</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_25" class="nav-link">参数数目可变的函数</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#other" class="nav-link">Other</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#_26" class="nav-link">宏</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#_27" class="nav-link">条件编译</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -210,33 +272,17 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="3"><a href="#_21" class="nav-link">预定义宏</a>
+            <li class="nav-item" data-bs-level="3"><a href="#_28" class="nav-link">预定义宏</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_22" class="nav-link">参数数目可变的函数</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_23" class="nav-link">两种定义字符串的方法</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_24" class="nav-link">二维数组所占内存是连续的</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_25" class="nav-link">联合与字段</a>
-              <ul class="nav flex-column">
               </ul>
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#exit" class="nav-link">exit() 退出程序</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#void" class="nav-link">无类型指针 void *</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_29" class="nav-link">伪随机数</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -255,6 +301,7 @@
 <p>This is a collection of interesting C code snippets and concepts I've gathered. Feel free to explore, learn, and experiment with these examples. This page is being continuously updated, so be sure to check back often for new content!</p>
 <p>If you have any questions, suggestions, or want to discuss any of these topics further, please don't hesitate to make a comment or reach out to me. Your input is valuable and appreciated! </p>
 </blockquote>
+<h1 id="basics">Basics</h1>
 <h2 id="_1">特殊的字符</h2>
 <h3 id="_2">响铃符，在外部终端运行时会发出声音🔔</h3>
 <pre><code class="language-c">#include&lt;stdio.h&gt;
@@ -280,6 +327,7 @@ int main(){
 }
 </code></pre>
 <h2 id="float-double">float 和 double 并非准确值</h2>
+<p>计算机以二进制存储小数，小数点后的部分以2的负指数形式存储，一些有限的十进制小数就变成了无限循环小数，无法准确存储。</p>
 <pre><code class="language-c">#include&lt;stdio.h&gt;
 int main(){
     for (float i = 0; i &lt; 100; i+=1)
@@ -289,6 +337,7 @@ int main(){
     return 0;
 }
 </code></pre>
+<p>参考：小数的进制转换代码 <a href="../elegant-codes/#_5">链接</a></p>
 <blockquote>
 <p>⚠️</p>
 <p>float 和 double 不能进行位运算和取模（或被取模）操作</p>
@@ -339,86 +388,13 @@ int main(){
 
 }
 </code></pre>
-<h2 id="_4">开一个长度为<em>变量</em>的数组</h2>
-<pre><code class="language-c">#include&lt;stdio.h&gt;
-int main(){
-    int n;
-    scanf(&quot;%d&quot;,&amp;n);
-    int a[n];
-    for (int i = 0; i &lt; n; i++)
-    {
-        printf(&quot;%d &quot;,a[i]);
-    }
-}
+<h2 id="for">带有空语句的for</h2>
+<pre><code class="language-c">for ( a ; b ; c ) { ... } 
 </code></pre>
-<p>a[n]必须是<strong>局部变量</strong>，若在全局定义，会报错 <code>variably modified 'a' at file scope</code></p>
-<pre><code class="language-c">#include&lt;stdio.h&gt;
-int n=10; //在c中，即使改为const int 也会报错，改为cpp文件后正常
-int a[n];
-
-int main(){
-    for (int i = 0; i &lt; n; i++)
-    {
-        printf(&quot;%d &quot;,a[i]);
-    }
-}
-</code></pre>
-<h2 id="_5">局部变量是未经初始化的，全局变量被初始化为零。</h2>
-<pre><code class="language-c">#include&lt;stdio.h&gt;
-int a[100];
-int main(){
-    for (int i = 0; i &lt; 100; i++)
-    {
-        printf(&quot;%d &quot;,a[i]);
-    }
-}
-</code></pre>
-<p>结果全为<code>0</code></p>
-<pre><code class="language-c">#include&lt;stdio.h&gt;
-int main(){
-    int a[100];
-    for (int i = 0; i &lt; 100; i++)
-    {
-        printf(&quot;%d &quot;,a[i]);
-    }
-}
-</code></pre>
-<p>结果为乱七八糟的数</p>
-<h2 id="_6">用空白列表初始化局部数组</h2>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-int main(){
-    int arr[5] = {}; // Initialize all elements to 0
-    for(int i = 0; i &lt; 5; i++){
-        printf(&quot;%d &quot;, arr[i]);
-    }
-    return 0;
-}
-</code></pre>
-<p>使用空白列表 <code>{}</code> 可以将局部数组的所有元素初始化为0。这比手动初始化每个元素更方便。</p>
-<h2 id="enum">枚举 Enum</h2>
-<h3 id="_7">不出现枚举名</h3>
-<pre><code class="language-c">enum {SUN,MON,TUE,WED,THU,FRI,SAT}week1,week2; //定义了两个枚举变量
-</code></pre>
-<p>由于没有名称，无法引用，不能再定义更多这种类型的枚举变量</p>
-<h3 id="_8">指定枚举数值时重复</h3>
-<pre><code class="language-c">enum week{SUN,MON,TUE,WED=0,THU,FRI,SAT};
-</code></pre>
-<p>值分别为 <code>0 1 2 0 1 2 3 4</code></p>
-<h3 id="_9">当枚举的数值不连续时枚举变量的范围</h3>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-
-enum week{SUN,MON,TUE,WED,THU,FRI,SAT=10};
-
-int main()
-{
-    enum week week1;
-    week1=6;
-    return 0;
-}
-</code></pre>
-<p>week 的值不能为6 <code>error: invalid conversion from 'int' to 'week' [-fpermissive]</code></p>
+<p>当 <code>b</code> 为空时，相当于填入了非空常量，即循环将一直进行（除非遇到转移语句）</p>
+<p><code>a</code> <code>c</code> 为空时，将不进行任何操作</p>
 <h2 id="scanf">scanf 的格式控制</h2>
-<h3 id="_10">空白字符</h3>
+<h3 id="_4">空白字符</h3>
 <p>以下的表达全都等价</p>
 <pre><code class="language-c">scanf(&quot;%s%s&quot;,&amp;a,&amp;b);
 scanf(&quot;%s %s&quot;,&amp;a,&amp;b);
@@ -448,7 +424,7 @@ int main() {
 }
 </code></pre>
 <p>改为<code>scanf("%s ",a);</code>,b=”world”</p>
-<h3 id="_11">普通字符</h3>
+<h3 id="_5">普通字符</h3>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 char a[100],b[100];
 int main()
@@ -460,7 +436,7 @@ int main()
 }
 </code></pre>
 <p>表达式加入了普通字符，必须输入 <code>abcde and fghij</code> 才能正确输入a和b</p>
-<h3 id="_12">赋值禁止字符 *</h3>
+<h3 id="_6">赋值禁止字符 *</h3>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 char a,b;
 int main()
@@ -472,7 +448,7 @@ int main()
 }
 </code></pre>
 <p>input <code>a bcdef g</code> output <code>a g</code></p>
-<h3 id="_13">指定最大域宽</h3>
+<h3 id="_7">指定最大域宽</h3>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 char a[100],b[100];
 int main()
@@ -484,48 +460,18 @@ int main()
 }
 </code></pre>
 <p>input <code>abcdefghijklmnopqrstuvwxyz</code> output <code>abcde fghij</code></p>
-<h2 id="for">带有空语句的for</h2>
-<pre><code class="language-c">for ( a ; b ; c ) { ... } 
-</code></pre>
-<p>当 <code>b</code> 为空时，相当于填入了非空常量，即循环将一直进行（除非遇到转移语句）</p>
-<p><code>a</code> <code>c</code> 为空时，将不进行任何操作</p>
-<h2 id="_14">伪随机数</h2>
-<p><strong><em>线性同余法：</em></strong></p>
-<p>$$
-a_0=seed, a_n=(A\times a_{n+1}+B)\%M.
-$$</p>
-<p>A,B,M<code>= RAND_MAX</code> 是产生器设定的常数。</p>
-<p>设定种子：</p>
-<pre><code class="language-c">srand(time(NULL)); //用时间做种子，保证每次运行时不同
-srand(a); //使用固定的种子，生成的序列是固定的
-</code></pre>
-<h2 id="_15">实参传递</h2>
-<h3 id="_16">实参求值顺序由编译器决定</h3>
+<h1 id="variables-and-pointers">Variables and pointers</h1>
+<h2 id="_8">变量被赋给超出范围的值，自动取模</h2>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 
-void printab(int a,int b){
-    printf(&quot;%d %d&quot;,a,b);
-}
+short a=0x12345678;
 
-int main()
-{
-    int a=0;
-    printab(a,a++);
+int main() {
+    printf(&quot;%x&quot; ,a);
     return 0;
 }
 </code></pre>
-<p>或者，</p>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-
-int main()
-{
-    int a=0;
-    printf(&quot;%d %d&quot;,a,a++);
-    return 0;
-}
-
-</code></pre>
-<h2 id="_17">内层变量与外层变量重名，外层的变量被屏蔽</h2>
+<h2 id="_9">内层变量与外层变量重名，外层的变量被屏蔽</h2>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 
 int main()
@@ -539,7 +485,7 @@ int main()
     return 0;
 }
 </code></pre>
-<h3 id="_18">在同一层重新定义一个重名变量会报错</h3>
+<h3 id="_10">在同一层重新定义一个重名变量会报错</h3>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 
 int main()
@@ -579,8 +525,341 @@ int main()
 }
 
 </code></pre>
-<h2 id="_19">宏</h2>
-<h3 id="_20">条件编译</h3>
+<h2 id="_11">两种定义字符串的方法</h2>
+<p>method 1:</p>
+<pre><code class="language-cpp">#include &lt;stdio.h&gt;
+
+int main()
+{
+    char *s1=&quot;hello&quot;; //字符串存储在常量区，地址赋给s1，s1是指针变量
+    printf(&quot;%s &quot;,s1);
+    printf(&quot;%c &quot;,*(s1+1));
+    printf(&quot;%c &quot;,s1[2]);
+    s1=&quot;world&quot;; //s1指向另一字符串常量
+    printf(&quot;%s &quot;,s1);   
+    return 0;
+}
+</code></pre>
+<p>s1可修改，字符串不准更改 </p>
+<p>method 2:</p>
+<pre><code class="language-cpp">#include &lt;stdio.h&gt;
+
+int main()
+{
+    char s1[]=&quot;hello&quot;; //字符串存储在变量区，s1为指针常量，指向字符串
+    printf(&quot;%s &quot;,s1);
+    printf(&quot;%c &quot;,*(s1+1));
+    printf(&quot;%c &quot;,s1[2]);
+    s1[4]='0'; //更改字符串
+    printf(&quot;%s &quot;,s1);   
+    return 0;
+}
+</code></pre>
+<p>字符串可修改，s1不可修改</p>
+<h2 id="void">无类型指针 void *</h2>
+<p>void指针可以指向任意类型的数据，如果要将void指针p赋给其他类型的指针，则需要强制类型转换。</p>
+<p>void指针不应用于计算，否则将收到警告</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int a[]={1,2,3,4,5,6,7,8,9,10};
+int *p=a;
+void *q=a; //无类型指针
+int main(){
+    printf(&quot;*p=%d *q=%d\n&quot;,*p,*(int *)q);
+    return 0;
+}
+</code></pre>
+<p>各指针所占的空间:</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int *p1;
+char *p2;
+double *p3;
+void *p4; //char＊和void＊指向空间均为1byte
+int a[10][10];
+int main(){
+    printf(&quot;%d %d %d %d %d\n&quot;,(p1+1)-p1,(p2+1)-p2,(p3+1)-p3,(a+1)-a,(a[0]+1)-a[0]);
+    printf(&quot;%d %d %d %d %d %d&quot;,(int)((char*)(p1+1)-(char*)p1),(char*)(p2+1)-(char*)p2,(char*)(p3+1)-(char*)p3,(char*)(p4+1)-(char*)p4,(char*)(a+1)-(char*)a,(char*)(a[0]+1)-(char*)a[0]);
+    return 0;
+}
+</code></pre>
+<p>输出：</p>
+<pre><code>1 1 1 1 1
+4 1 8 1 40 4
+</code></pre>
+<h2 id="_12">复杂的指针声明</h2>
+<pre><code class="language-c">int (*p[10])[20]; //p是长度为十的指针数组，每个指针指向长度为20的整数数组
+int (*p[10])(int,int); //p 是一个包含 10 个元素的数组，数组中的每个元素都是指向一个函数的指针，这些函数接受两个 int 类型的参数，并返回一个 int 类型的值。
+
+int (*p(int))[10]; //p 是一个函数，该函数接受一个 int 类型的参数，并返回一个指向包含 10 个 int 类型元素的数组的指针。
+int *p(int)[10]; //p 是一个函数，该函数接受一个 int 类型的参数，并返回一个包含 10 个指向 int 类型的指针的数组。
+
+int *(*p[10])(int,int); //指向的函数返回一个 int 类型的指针。
+int (*p[10])(int,int)[5]; //函数返回一个包含 5 个 int 类型元素的数组。
+int (*p)(char (*)(int *)); //p的参数是一个接受 int * 类型参数并返回 char 类型值的函数指针
+
+</code></pre>
+<h1 id="array">Array</h1>
+<h2 id="_13">开一个长度为<em>变量</em>的数组</h2>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int main(){
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    int a[n];
+    for (int i = 0; i &lt; n; i++)
+    {
+        printf(&quot;%d &quot;,a[i]);
+    }
+}
+</code></pre>
+<p>a[n]必须是<strong>局部变量</strong>，若在全局定义，会报错 <code>variably modified 'a' at file scope</code></p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int n=10; //在c中，即使改为const int 也会报错，改为cpp文件后正常
+int a[n];
+
+int main(){
+    for (int i = 0; i &lt; n; i++)
+    {
+        printf(&quot;%d &quot;,a[i]);
+    }
+}
+</code></pre>
+<h2 id="_14">二维数组所占内存是连续的</h2>
+<pre><code class="language-cpp">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int s[2][3]={{1,3,5},
+                 {2,4,6}};
+    for (int i = 0; i &lt; 6; i++){
+        printf(&quot;%d &quot;,s[0][i]); //s[0]超出后进入s[1]
+    }   
+}
+</code></pre>
+<h2 id="_15">局部变量是未经初始化的，全局变量被初始化为零。</h2>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int a[100];
+int main(){
+    for (int i = 0; i &lt; 100; i++)
+    {
+        printf(&quot;%d &quot;,a[i]);
+    }
+}
+</code></pre>
+<p>结果全为<code>0</code></p>
+<pre><code class="language-c">#include&lt;stdio.h&gt;
+int main(){
+    int a[100];
+    for (int i = 0; i &lt; 100; i++)
+    {
+        printf(&quot;%d &quot;,a[i]);
+    }
+}
+</code></pre>
+<p>结果为乱七八糟的数</p>
+<h2 id="_16">数组的初始化</h2>
+<h3 id="_17">用空白列表初始化局部数组</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main(){
+    int arr[5] = {}; // Initialize all elements to 0
+    for(int i = 0; i &lt; 5; i++){
+        printf(&quot;%d &quot;, arr[i]);
+    }
+    return 0;
+}
+</code></pre>
+<p>使用空白列表 <code>{}</code> 可以将局部数组的所有元素初始化为0。这比手动初始化每个元素更方便。</p>
+<h3 id="_18">部分初始化数组</h3>
+<p>只有数组的第一维大小可以不填，自动确定。</p>
+<pre><code class="language-C">int A[][]={{1,2,3},{4,5,6},{7,8,9}};  //错误
+int A[3][]={{1,2,3},{4,5,6},{7,8,9}}; //错误
+int A[][3]={{1,2,3},{4,5,6},{7,8,9}}; //正确
+</code></pre>
+<p>初始化的顺序: Down then cross ⬇↗️⬇</p>
+<pre><code class="language-C">#include &lt;stdio.h&gt;
+
+int main() {
+    int A[3][3] = {1, 2, 3, 4, 5, 6, 7};
+    for (int j = 0; j &lt; 3; j++) {
+        for (int i = 0; i &lt; 3; i++) {
+            printf(&quot;%d &quot;, A[i][j]);
+        }
+        printf(&quot;\n&quot;);
+    }
+
+    return 0;
+}
+</code></pre>
+<p>而<code>int A[3][3] = {{1, 2, 3, 4}};</code>会因超出长度报错</p>
+<h3 id="_19">初始化指定下标的元素</h3>
+<blockquote>
+<p>⚠️</p>
+<p>经过我的测试，使用本节的方法，在windows中的gcc、msvc运行均会报错，linux下的gcc能够正常运行</p>
+</blockquote>
+<p>例如<code>int arr[8] = {[3]=4};</code></p>
+<p>也可混合使用（仔细观察此时初始化的顺序）</p>
+<pre><code class="language-C">#include &lt;stdio.h&gt; //课本例题
+int main() {
+    int arr[8] = {1,[3]=4,[1]=2,6,[6]=7,8};
+    for (int i = 0; i &lt; 8; i++) {
+        printf(&quot;%d &quot;,arr[i]);
+    }
+    return 0;
+}
+</code></pre>
+<p>顺序：当未指定下标时，将初始化下一个元素。
+若一个元素被多次初始化，最终的值为最后一次的结果。</p>
+<p>二维数组也可以</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int arr[5][5] = {[2] = {[3] = 8}};
+
+    for (int i = 0; i &lt; 5; i++) {
+        for (int j = 0; j &lt; 5; j++) {
+            printf(&quot;%d &quot;, arr[i][j]);
+        }
+        printf(&quot;\n&quot;);
+    }
+
+    return 0;
+}
+</code></pre>
+<h1 id="structure">Structure</h1>
+<h2 id="enum">枚举 Enum</h2>
+<h3 id="_20">不出现枚举名</h3>
+<pre><code class="language-c">enum {SUN,MON,TUE,WED,THU,FRI,SAT}week1,week2; //定义了两个枚举变量
+</code></pre>
+<p>由于没有名称，无法引用，不能再定义更多这种类型的枚举变量</p>
+<h3 id="_21">指定枚举数值时重复</h3>
+<pre><code class="language-c">enum week{SUN,MON,TUE,WED=0,THU,FRI,SAT};
+</code></pre>
+<p>值分别为 <code>0 1 2 0 1 2 3 4</code></p>
+<h3 id="_22">当枚举的数值不连续时枚举变量的范围</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+enum week{SUN,MON,TUE,WED,THU,FRI,SAT=10};
+
+int main()
+{
+    enum week week1;
+    week1=6;
+    return 0;
+}
+</code></pre>
+<p>week 的值不能为6 <code>error: invalid conversion from 'int' to 'week' [-fpermissive]</code></p>
+<h2 id="_23">联合与字段</h2>
+<p>联合可以将同一段存储空间以多种类型的数据存取；字段可以将一段内存按位宽拆分。</p>
+<p>💡可以利用联合与字段简便的实现01的枚举：</p>
+<pre><code class="language-cpp">#include &lt;stdio.h&gt;
+union selection{
+    struct {
+        unsigned a: 1;
+        unsigned b: 1;
+        unsigned c: 1;
+        unsigned d: 1;
+    };
+    unsigned D;
+}e;
+
+int main(){
+    for (e.D=0; e.D&lt;0xf; e.D++){
+        printf(&quot;a:%d  b:%d  c:%d  d:%d\n&quot;,e.a,e.b,e.c,e.d);
+    }
+    return 0;
+}
+</code></pre>
+<p>字段不能跨越一个字的边界</p>
+<pre><code class="language-cpp">#include &lt;stdio.h&gt;
+
+union selection{
+    struct {
+        unsigned short a: 1;
+        unsigned short b: 16; //存在下一个字中
+    };
+    unsigned long long D;
+}e;
+
+int main()
+{
+    e.a=1;
+    e.b=1;
+    printf(&quot;%x&quot;,e.D);
+    return 0;
+}
+</code></pre>
+<h1 id="function">Function</h1>
+<h2 id="_24">实参求值顺序由编译器决定</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+void printab(int a,int b){
+    printf(&quot;%d %d&quot;,a,b);
+}
+
+int main()
+{
+    int a=0;
+    printab(a,a++);
+    return 0;
+}
+</code></pre>
+<p>或者，</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a=0;
+    printf(&quot;%d %d&quot;,a,a++);
+    return 0;
+}
+
+</code></pre>
+<h2 id="_25">参数数目可变的函数</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdarg.h&gt;
+
+int my_max(int n, ...){
+    int ans=-2147483648;
+    va_list a;
+    va_start(a,n);
+    for (int i = 0; i &lt; n; i++) {
+        int tmp=va_arg(a,int);
+        if(tmp &gt;= ans)  ans=tmp;
+    }
+    va_end(a);
+    return ans;
+}
+
+int main(){
+    int a,b,c;
+    scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;c);
+    printf(&quot;max of abc is: %d\n&quot;,my_max(3,a,b,c));
+    return 0;
+}
+</code></pre>
+<p>C++ 风格：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;initializer_list&gt;
+using namespace std;
+
+int my_max(initializer_list&lt;int&gt;arr){
+    int ans=INT32_MIN;
+    for (auto i = arr.begin(); i!=arr.end() ; i++){
+        ans=max(ans,*i);
+    }
+    return ans;
+}
+
+int main()
+{
+    int a,b,c;
+    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;    
+    cout&lt;&lt;my_max({a,b,c});
+    return 0;
+}
+
+</code></pre>
+<h1 id="other">Other</h1>
+<h2 id="_26">宏</h2>
+<h3 id="_27">条件编译</h3>
 <p>重复定义宏时，编译预处理时从头到尾顺序操作，即每个位置a的值为上一次定义的值，但会收到一条警告</p>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 #define a 1
@@ -634,7 +913,7 @@ int main()
     return 0;
 }
 </code></pre>
-<h3 id="_21">预定义宏</h3>
+<h3 id="_28">预定义宏</h3>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 
 int main()
@@ -644,134 +923,6 @@ int main()
     return 0;
 }
 
-</code></pre>
-<h2 id="_22">参数数目可变的函数</h2>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-#include &lt;stdarg.h&gt;
-
-int my_max(int n, ...){
-    int ans=-2147483648;
-    va_list a;
-    va_start(a,n);
-    for (int i = 0; i &lt; n; i++) {
-        int tmp=va_arg(a,int);
-        if(tmp &gt;= ans)  ans=tmp;
-    }
-    va_end(a);
-    return ans;
-}
-
-int main(){
-    int a,b,c;
-    scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;c);
-    printf(&quot;max of abc is: %d\n&quot;,my_max(3,a,b,c));
-    return 0;
-}
-</code></pre>
-<p>C++ 风格：</p>
-<pre><code class="language-cpp">#include &lt;iostream&gt;
-#include &lt;initializer_list&gt;
-using namespace std;
-
-int my_max(initializer_list&lt;int&gt;arr){
-    int ans=INT32_MIN;
-    for (auto i = arr.begin(); i!=arr.end() ; i++){
-        ans=max(ans,*i);
-    }
-    return ans;
-}
-
-int main()
-{
-    int a,b,c;
-    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;    
-    cout&lt;&lt;my_max({a,b,c});
-    return 0;
-}
-
-</code></pre>
-<h2 id="_23">两种定义字符串的方法</h2>
-<p>method 1:</p>
-<pre><code class="language-cpp">#include &lt;stdio.h&gt;
-
-int main()
-{
-    char *s1=&quot;hello&quot;; //字符串存储在常量区，地址赋给s1，s1是指针变量
-    printf(&quot;%s &quot;,s1);
-    printf(&quot;%c &quot;,*(s1+1));
-    printf(&quot;%c &quot;,s1[2]);
-    s1=&quot;world&quot;; //s1指向另一字符串常量
-    printf(&quot;%s &quot;,s1);   
-    return 0;
-}
-</code></pre>
-<p>s1可修改，字符串不准更改 </p>
-<p>method 2:</p>
-<pre><code class="language-cpp">#include &lt;stdio.h&gt;
-
-int main()
-{
-    char s1[]=&quot;hello&quot;; //字符串存储在变量区，s1为指针常量，指向字符串
-    printf(&quot;%s &quot;,s1);
-    printf(&quot;%c &quot;,*(s1+1));
-    printf(&quot;%c &quot;,s1[2]);
-    s1[4]='0'; //更改字符串
-    printf(&quot;%s &quot;,s1);   
-    return 0;
-}
-</code></pre>
-<p>字符串可修改，s1不可修改</p>
-<h2 id="_24">二维数组所占内存是连续的</h2>
-<pre><code class="language-cpp">#include &lt;stdio.h&gt;
-
-int main()
-{
-    int s[2][3]={{1,3,5},
-                 {2,4,6}};
-    for (int i = 0; i &lt; 6; i++){
-        printf(&quot;%d &quot;,s[0][i]); //s[0]超出后进入s[1]
-    }   
-}
-</code></pre>
-<h2 id="_25">联合与字段</h2>
-<p>联合可以将同一段存储空间以多种类型的数据存取；字段可以将一段内存按位宽拆分。</p>
-<p>💡可以利用联合与字段简便的实现01的枚举：</p>
-<pre><code class="language-cpp">#include &lt;stdio.h&gt;
-union selection{
-    struct {
-        unsigned a: 1;
-        unsigned b: 1;
-        unsigned c: 1;
-        unsigned d: 1;
-    };
-    unsigned D;
-}e;
-
-int main(){
-    for (e.D=0; e.D&lt;0xf; e.D++){
-        printf(&quot;a:%d  b:%d  c:%d  d:%d\n&quot;,e.a,e.b,e.c,e.d);
-    }
-    return 0;
-}
-</code></pre>
-<p>字段不能跨越一个字的边界</p>
-<pre><code class="language-cpp">#include &lt;stdio.h&gt;
-
-union selection{
-    struct {
-        unsigned short a: 1;
-        unsigned short b: 16; //存在下一个字中
-    };
-    unsigned long long D;
-}e;
-
-int main()
-{
-    e.a=1;
-    e.b=1;
-    printf(&quot;%x&quot;,e.D);
-    return 0;
-}
 </code></pre>
 <h2 id="exit">exit() 退出程序</h2>
 <p><code>exit();</code> 可直接退出程序，在主程序中，效果与return类似，而在调用的函数中，可以直接退出程序而非返回。</p>
@@ -789,34 +940,15 @@ int main(){
     printf(&quot;message from main\n&quot;);
 }
 </code></pre>
-<h2 id="void">无类型指针 void *</h2>
-<p>void指针可以指向任意类型的数据，如果要将void指针p赋给其他类型的指针，则需要强制类型转换。</p>
-<p>void指针不应用于计算，否则将收到警告</p>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-int a[]={1,2,3,4,5,6,7,8,9,10};
-int *p=a;
-void *q=a; //无类型指针
-int main(){
-    printf(&quot;*p=%d *q=%d\n&quot;,*p,*(int *)q);
-    return 0;
-}
-</code></pre>
-<p>各指针所占的空间:</p>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-int *p1;
-char *p2;
-double *p3;
-void *p4; //char＊和void＊指向空间均为1byte
-int a[10][10];
-int main(){
-    printf(&quot;%d %d %d %d %d\n&quot;,(p1+1)-p1,(p2+1)-p2,(p3+1)-p3,(a+1)-a,(a[0]+1)-a[0]);
-    printf(&quot;%d %d %d %d %d %d&quot;,(int)((char*)(p1+1)-(char*)p1),(char*)(p2+1)-(char*)p2,(char*)(p3+1)-(char*)p3,(char*)(p4+1)-(char*)p4,(char*)(a+1)-(char*)a,(char*)(a[0]+1)-(char*)a[0]);
-    return 0;
-}
-</code></pre>
-<p>输出：</p>
-<pre><code>1 1 1 1 1
-4 1 8 1 40 4
+<h2 id="_29">伪随机数</h2>
+<p><strong><em>线性同余法：</em></strong></p>
+<p>$$
+a_0=seed, a_n=(A\times a_{n+1}+B)\%M.
+$$</p>
+<p>A,B,M<code>= RAND_MAX</code> 是产生器设定的常数。</p>
+<p>设定种子：</p>
+<pre><code class="language-c">srand(time(NULL)); //用时间做种子，保证每次运行时不同
+srand(a); //使用固定的种子，生成的序列是固定的
 </code></pre></div>
             </div>
         </div>

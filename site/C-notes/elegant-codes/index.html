@@ -108,19 +108,23 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">文件读写模式实现替换</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">逆波兰表达式</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">逆波兰表达式</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">矩阵运算</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">矩阵运算</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_4" class="nav-link">高精度四则运算</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">高精度四则运算</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_5" class="nav-link">小数的进制转换</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_6" class="nav-link">文件读写模式实现替换</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -209,37 +213,7 @@ int main()
     return 0;
 }
 </code></pre>
-<h2 id="_2">文件读写模式实现替换</h2>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-
-FILE *fp;
-
-void freplace(char _from, char _to) {  // 字符替换
-    rewind(fp);                        // 定位到文件开始，清除标志
-    while (!feof(fp)) {
-        char tmp = fgetc(fp);
-        long tmppos= ftell(fp);
-        if (tmp == _from) {
-            fseek(fp, -1, SEEK_CUR);
-            fputc(_to, fp);
-            fseek(fp,-1,SEEK_CUR);
-        }
-        printf(&quot;%c %d %d\n&quot;,tmp, ftell(fp), feof(fp));
-    }
-}
-
-int main() {
-    if (!(fp = fopen(&quot;..\\a.txt&quot;, &quot;r+&quot;))) {
-        printf(&quot;failed to open&quot;);
-        return 0;
-    }
-    freplace('p', 'd');
-
-    fclose(fp);
-    return 0;
-}
-</code></pre>
-<h2 id="_3">逆波兰表达式</h2>
+<h2 id="_2">逆波兰表达式</h2>
 <p>一种后缀表达式，
 e.g.  4 -13 5 / +  answer: 2</p>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
@@ -299,7 +273,7 @@ int main()
 
 
 </code></pre>
-<h2 id="_4">矩阵运算</h2>
+<h2 id="_3">矩阵运算</h2>
 <p>优雅的使用运算符进行矩阵运算(c++)</p>
 <pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
 using namespace std;
@@ -406,7 +380,7 @@ int main() {
     return 0;
 }
 </code></pre>
-<h2 id="_5">高精度四则运算</h2>
+<h2 id="_4">高精度四则运算</h2>
 <p>重载运算符实现输入、输出+、-、*</p>
 <pre><code class="language-c++">#include &lt;bits/stdc++.h&gt;
 using namespace std;
@@ -513,6 +487,90 @@ int main()
     n3=(n1*n2)*2;
     cout&lt;&lt;n3;
 
+    return 0;
+}
+</code></pre>
+<h2 id="_5">小数的进制转换</h2>
+<pre><code class="language-c">#include&lt;iostream&gt;
+using namespace std;
+
+string trans=&quot;0123456789ABCDEFGHIJKLMNOP&quot;;
+
+double convertto10(string s, int base){
+    size_t i;
+    int ansi=0; double ansf=0;
+    for (i = 0; i &lt; s.size(); i++)
+    {
+        if(s[i]=='.')break;
+        ansi*=base;
+        ansi+=trans.find(s[i]);
+    }
+    for (size_t j=s.size()-1; j&gt;i; j--)
+    {
+        ansf+=trans.find(s[j]);
+        ansf/=base;
+    }
+    return ansi+ansf;
+}
+
+string convertfrom10(double x, int base){
+    int xi; double xf;
+    xi=int(x); xf=x-xi;
+
+    string ans=&quot;&quot;;
+
+    while (xi){
+        ans=trans[xi%base]+ans;
+        xi/=base;
+    }
+    if(xf==0)return ans;
+    ans+='.';
+    int tmpcnt=0;
+    while (xf &amp;&amp; tmpcnt++&lt;100)
+    {
+        xf*=base;
+        int tmp=int(xf);
+        ans+=trans[tmp];
+        xf-=tmp;
+    }
+    return ans;
+}
+
+int main(){
+    string x; int b1,b2;
+    cout&lt;&lt;&quot;Input number, source base, target base.\n&quot;;
+    cin&gt;&gt;x&gt;&gt;b1&gt;&gt;b2;
+    cout&lt;&lt;&quot;answer: &quot;&lt;&lt;convertfrom10(convertto10(x,b1),b2);
+    return 0;
+}
+</code></pre>
+<h2 id="_6">文件读写模式实现替换</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+FILE *fp;
+
+void freplace(char _from, char _to) {  // 字符替换
+    rewind(fp);                        // 定位到文件开始，清除标志
+    while (!feof(fp)) {
+        char tmp = fgetc(fp);
+        long tmppos= ftell(fp);
+        if (tmp == _from) {
+            fseek(fp, -1, SEEK_CUR);
+            fputc(_to, fp);
+            fseek(fp,-1,SEEK_CUR);
+        }
+        printf(&quot;%c %d %d\n&quot;,tmp, ftell(fp), feof(fp));
+    }
+}
+
+int main() {
+    if (!(fp = fopen(&quot;..\\a.txt&quot;, &quot;r+&quot;))) {
+        printf(&quot;failed to open&quot;);
+        return 0;
+    }
+    freplace('p', 'd');
+
+    fclose(fp);
     return 0;
 }
 </code></pre></div>

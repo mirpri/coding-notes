@@ -23,6 +23,10 @@ body::before {
 body > .container {
     margin-top: 20px;
     min-height: calc(100vh - 136px);
+    
+    
+    opacity: 0.8;
+    backdrop-filter: blur(10px);
 }
 
 .navbar.fixed-top {

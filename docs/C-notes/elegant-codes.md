@@ -84,38 +84,6 @@ int main()
 
 
 
-## 文件读写模式实现替换
-
-```c
-#include <stdio.h>
-
-FILE *fp;
-
-void freplace(char _from, char _to) {  // 字符替换
-    rewind(fp);                        // 定位到文件开始，清除标志
-    while (!feof(fp)) {
-        char tmp = fgetc(fp);
-        long tmppos= ftell(fp);
-        if (tmp == _from) {
-            fseek(fp, -1, SEEK_CUR);
-            fputc(_to, fp);
-            fseek(fp,-1,SEEK_CUR);
-        }
-        printf("%c %d %d\n",tmp, ftell(fp), feof(fp));
-    }
-}
-
-int main() {
-    if (!(fp = fopen("..\\a.txt", "r+"))) {
-        printf("failed to open");
-        return 0;
-    }
-    freplace('p', 'd');
-
-    fclose(fp);
-    return 0;
-}
-```
 
 ## 逆波兰表达式
 一种后缀表达式，
@@ -403,4 +371,95 @@ int main()
 ```
 
 
+## 小数的进制转换
 
+```c
+#include<iostream>
+using namespace std;
+
+string trans="0123456789ABCDEFGHIJKLMNOP";
+
+double convertto10(string s, int base){
+    size_t i;
+    int ansi=0; double ansf=0;
+    for (i = 0; i < s.size(); i++)
+    {
+        if(s[i]=='.')break;
+        ansi*=base;
+        ansi+=trans.find(s[i]);
+    }
+    for (size_t j=s.size()-1; j>i; j--)
+    {
+        ansf+=trans.find(s[j]);
+        ansf/=base;
+    }
+    return ansi+ansf;
+}
+
+string convertfrom10(double x, int base){
+    int xi; double xf;
+    xi=int(x); xf=x-xi;
+
+    string ans="";
+
+    while (xi){
+        ans=trans[xi%base]+ans;
+        xi/=base;
+    }
+    if(xf==0)return ans;
+    ans+='.';
+    int tmpcnt=0;
+    while (xf && tmpcnt++<100)
+    {
+        xf*=base;
+        int tmp=int(xf);
+        ans+=trans[tmp];
+        xf-=tmp;
+    }
+    return ans;
+}
+
+int main(){
+    string x; int b1,b2;
+    cout<<"Input number, source base, target base.\n";
+    cin>>x>>b1>>b2;
+    cout<<"answer: "<<convertfrom10(convertto10(x,b1),b2);
+    return 0;
+}
+```
+
+
+
+
+## 文件读写模式实现替换
+
+```c
+#include <stdio.h>
+
+FILE *fp;
+
+void freplace(char _from, char _to) {  // 字符替换
+    rewind(fp);                        // 定位到文件开始，清除标志
+    while (!feof(fp)) {
+        char tmp = fgetc(fp);
+        long tmppos= ftell(fp);
+        if (tmp == _from) {
+            fseek(fp, -1, SEEK_CUR);
+            fputc(_to, fp);
+            fseek(fp,-1,SEEK_CUR);
+        }
+        printf("%c %d %d\n",tmp, ftell(fp), feof(fp));
+    }
+}
+
+int main() {
+    if (!(fp = fopen("..\\a.txt", "r+"))) {
+        printf("failed to open");
+        return 0;
+    }
+    freplace('p', 'd');
+
+    fclose(fp);
+    return 0;
+}
+```
