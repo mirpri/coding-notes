@@ -300,6 +300,17 @@ int main()
 }
 
 ```
+实际上，static变量在程序开始执行时就已经初始化。但若在定义之前引用，则会报错。
+static变量的生命期与全局变量相同，而作用域与局部变量相同。
+```C
+#include <stdio.h>
+
+int main() {
+    printf("hi"); //设置断点，观察到显示x=100
+    static int x=100;
+    return 0;
+}
+```
 
 ## 两种定义字符串的方法
 
