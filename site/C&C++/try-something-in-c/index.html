@@ -47,11 +47,15 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="nav-item">
-                                <a href="../.." class="nav-link">Welcome to my coding notes!</a>
+                                <a href="../.." class="nav-link">Welcome</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">C notes</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">C&C++</a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../cpp-features/" class="dropdown-item">C++ Features</a>
+</li>
                                     
 <li>
     <a href="../elegant-codes/" class="dropdown-item">Elegant Codes</a>
@@ -59,6 +63,15 @@
                                     
 <li>
     <a href="./" class="dropdown-item active" aria-current="page">Try something in C</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Deep Learning</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Deep%20Learning/pytorch/" class="dropdown-item">Deep learning with PyTorch</a>
 </li>
                                 </ul>
                             </li>
@@ -76,7 +89,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../../Deep%20Learning/pytorch/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -194,6 +207,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#realloc" class="nav-link">realloc()</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
             
@@ -268,7 +285,7 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-bs-level="1"><a href="#other" class="nav-link">Other</a>
+            <li class="nav-item" data-bs-level="1"><a href="#miscellaneous" class="nav-link">Miscellaneous</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="2"><a href="#_28" class="nav-link">宏</a>
               <ul class="nav flex-column">
@@ -651,6 +668,12 @@ int main() {
 <p>ℹ️</p>
 <p>间接访问时，由于运算符的优先级顺序，<code>*pf</code>周围需要添加括号</p>
 </blockquote>
+<h2 id="realloc">realloc()</h2>
+<p>当一个指针指向的内容需要更大的连续存储空间时，用</p>
+<pre><code class="language-c">void * realloc(void *ptr, size_t newsize)
+</code></pre>
+<p>将当前内存块复制到更大空间。</p>
+<p>功能：先判断当前的指针是否有足够的连续空间，如果有，扩大ptr指向的地址，并且将ptr返回，如果空间不够，先按照newsize指定的大小分配空间，将原有数据从头到尾拷贝到新分配的内存区域，而后释放原来ptr所指内存区域（原来指针是自动释放），同时返回新分配的内存区域的首地址。即重新分配存储器块的地址。</p>
 <h1 id="array">Array</h1>
 <h2 id="_15">开一个长度为<em>变量</em>的数组</h2>
 <pre><code class="language-c">#include&lt;stdio.h&gt;
@@ -911,7 +934,7 @@ int main()
 }
 
 </code></pre>
-<h1 id="other">Other</h1>
+<h1 id="miscellaneous">Miscellaneous</h1>
 <h2 id="_28">宏</h2>
 <h3 id="_29">条件编译</h3>
 <p>重复定义宏时，编译预处理时从头到尾顺序操作，即每个位置a的值为上一次定义的值，但会收到一条警告</p>
