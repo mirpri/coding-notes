@@ -86,7 +86,7 @@
     --bs-body-font-size: 1rem;
     --bs-body-font-weight: 400;
     --bs-body-line-height: 1.5;
-    --bs-body-color: #495057;
+    --bs-body-color: #2d2d2d; /*original #495057;*/
     --bs-body-color-rgb: 73, 80, 87;
     --bs-body-bg: #fff;
     --bs-body-bg-rgb: 255, 255, 255;
@@ -243,7 +243,7 @@ h6 {
 
 .h1,
 h1 {
-    font-size: calc(1.375rem + 1.5vw)
+    font-size: calc(2.5rem + 1.5vw)
 }
 
 @media (min-width:1200px) {

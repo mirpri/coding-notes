@@ -50,14 +50,31 @@ body > .container {
 }
 
 h1 {
+    margin-top: 30px;
     color: inherit;
     font-weight: 400;
-    font-size: 42px;
+    /* font-size: 42px; */
+}
+
+h2{
+    color: inherit;
+    position: relative;
+    padding-bottom: 0.25em;
+}
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to right,#2fa4e7, #ffffff);
 }
 
 h2, h3, h4, h5, h6 {
-    color: inherit;
-    font-weight: 300;
+    /* color: #006dc1
+    font-weight: 300; */
+    margin-top: 20px;
 }
 
 hr {
