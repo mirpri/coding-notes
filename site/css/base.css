@@ -138,11 +138,15 @@ footer {
     bottom: 0;
     width: 100%;
     margin-top: 20px;
-    background-color: #e6e6e6;
+    background-color: #efefef;
     margin-bottom: 0px;
     padding: 8px 0;
     text-align: center;
-    font-weight: 200;
+    font-weight: 400;
+}
+
+.navbar{
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
 }
 
 .modal-dialog {
