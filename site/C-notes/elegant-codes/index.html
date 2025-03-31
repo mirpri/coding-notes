@@ -54,6 +54,10 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href="../VSCode-for-C%2B%2B/" class="dropdown-item">VS Code Portable for C++</a>
+</li>
+                                    
+<li>
     <a href="../cpp-features/" class="dropdown-item">C++ Features</a>
 </li>
                                     
@@ -138,6 +142,10 @@
               </ul>
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#_6" class="nav-link">文件读写模式实现替换</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_7" class="nav-link">无中间变量交换变量</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -586,7 +594,21 @@ int main() {
     fclose(fp);
     return 0;
 }
-</code></pre></div>
+</code></pre>
+<h2 id="_7">无中间变量交换变量</h2>
+<pre><code class="language-c">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int a=1234567,b=8901234;
+    a=a^b;
+    b=a^b;
+    a=a^b;
+    cout&lt;&lt;a&lt;&lt;&quot; &quot;&lt;&lt;b&lt;&lt;endl;    
+    return 0;
+}
+</code></pre>
+<p>其中，异或运算也可以用加减或乘除替代，但数据过大时可能溢出，乘除时要避免包含0。</p></div>
             </div>
         </div>
 

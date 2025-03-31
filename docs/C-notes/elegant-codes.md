@@ -463,3 +463,19 @@ int main() {
     return 0;
 }
 ```
+
+## 无中间变量交换变量
+```c
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a=1234567,b=8901234;
+    a=a^b;
+    b=a^b;
+    a=a^b;
+    cout<<a<<" "<<b<<endl;    
+    return 0;
+}
+```
+其中，异或运算也可以用加减或乘除替代，但数据过大时可能溢出，乘除时要避免包含0。
