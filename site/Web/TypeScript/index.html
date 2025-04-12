@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>VS Code Portable for C++ - My Coding Notes</title>
+        <title>TypeScript Learning - My Coding Notes</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/fontawesome.min.css" rel="stylesheet">
         <link href="../../css/brands.min.css" rel="stylesheet">
@@ -50,23 +50,23 @@
                                 <a href="../.." class="nav-link">Welcome</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">C notes</a>
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">C notes</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active" aria-current="page">VS Code Portable for C++</a>
+    <a href="../../C-notes/VSCode-for-C%2B%2B/" class="dropdown-item">VS Code Portable for C++</a>
 </li>
                                     
 <li>
-    <a href="../cpp-features/" class="dropdown-item">C++ Features</a>
+    <a href="../../C-notes/cpp-features/" class="dropdown-item">C++ Features</a>
 </li>
                                     
 <li>
-    <a href="../elegant-codes/" class="dropdown-item">Elegant Codes</a>
+    <a href="../../C-notes/elegant-codes/" class="dropdown-item">Elegant Codes</a>
 </li>
                                     
 <li>
-    <a href="../try-something-in-c/" class="dropdown-item">Try something in C</a>
+    <a href="../../C-notes/try-something-in-c/" class="dropdown-item">Try something in C</a>
 </li>
                                 </ul>
                             </li>
@@ -80,15 +80,15 @@
                                 </ul>
                             </li>
                             <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Web</a>
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Web</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../Web/JavaScript/" class="dropdown-item">JavaScript</a>
+    <a href="../JavaScript/" class="dropdown-item">JavaScript</a>
 </li>
                                     
 <li>
-    <a href="../../Web/TypeScript/" class="dropdown-item">TypeScript Learning</a>
+    <a href="./" class="dropdown-item active" aria-current="page">TypeScript Learning</a>
 </li>
                                 </ul>
                             </li>
@@ -101,12 +101,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../.." class="nav-link">
+                                <a rel="prev" href="../JavaScript/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../cpp-features/" class="nav-link">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -128,9 +128,13 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary" style="max-height: 70vh; overflow-y: auto;">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="1"><a href="#vs-code-portable-for-c" class="nav-link">VS Code Portable for C++</a>
+            <li class="nav-item" data-bs-level="1"><a href="#typescript-learning" class="nav-link">TypeScript Learning</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#download" class="nav-link">Download</a>
+            <li class="nav-item" data-bs-level="2"><a href="#overview" class="nav-link">Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#advatages-over-javascript" class="nav-link">Advatages over JavaScript</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -141,23 +145,67 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="vs-code-portable-for-c">VS Code <em>Portable</em> for C++</h1>
+<h1 id="typescript-learning">TypeScript Learning</h1>
+<p>TypeScript is the enhanced JavaScript.</p>
+<h2 id="overview">Overview</h2>
 <blockquote>
-<p>🔮 <em>"The right tools make the magic happen."</em></p>
+<p>Typescript is by Microsoft!</p>
 </blockquote>
-<p>Try out my portable, self-contained <strong>VS Code C++ programming environment</strong>.</p>
-<p>Equipped with a built-in <strong>MinGW</strong> compiler and meticulously configured settings and debugging options, it’s ready to use straight out of the box on your <em>Windows</em> PC. This setup eliminates the hassle of environment configuration while offering the modern features and convenience of Visual Studio Code. It's especially useful on public PCs, letting you carry your familiar setup wherever you go.</p>
+<p>TypeScript is a programming language that's a superset of JavaScript — building on top of it to add <strong>static typing</strong> so you can catch errors during development instead of at runtime. </p>
+<p>It was developed by Microsoft to address the difficulties of maintaining large applications written in JavaScript, and has been expanded to add a number of modern developer-friendly features.</p>
+<p>In addition to static typing, TypeScript also adds features like interfaces, generics, type inference, access modifiers, and other constructs not present in standard JavaScript. </p>
+<p>TypeScript compiles to plain JavaScript, so anything that works in JavaScript works in TypeScript, including third-party JavaScript libraries and any code you've already written in JavaScript.  </p>
+<h2 id="advatages-over-javascript">Advatages over JavaScript</h2>
+<p><strong><em>Static typing</em></strong>
+- improve readability and maintainability
+- early error detection
+- enhanced ide support</p>
+<pre><code class="language-ts">// define a variable with optional type annotation
+let x: number =5; // x is of type number
+let y=10; // y is of type number (inferred)
+console.log(x+y); // 15
+</code></pre>
+<p>Beyond static typing, TypeScript introduces several other key differences and enhancements compared to standard JavaScript:</p>
+<p><strong>Interfaces:</strong></p>
 <ul>
-<li>
-<p>Platform: Windows 10 and later</p>
-</li>
-<li>
-<p>Usage: Download VSCode-portable-for-cpp.7z, extract the archive to any folder and run <strong>Start.bat</strong> to launch.</p>
-</li>
+<li>TypeScript introduces interfaces, which are powerful tools for defining contracts or shapes for objects. This allows you to specify the properties and methods that an object must have.</li>
+<li>JavaScript doesn't have a built-in interface concept.</li>
 </ul>
-<h2 id="download">Download</h2>
-<p>💾 Download archive <a href="https://github.com/mirpri/coding-notes/releases/download/1.0.0/VSCode-portable-for-cpp.7z">here</a>.</p>
-<p>📢 <a href="https://github.com/mirpri/coding-notes/releases/tag/1.0.0">Release Page</a></p></div>
+<p><strong>Classes and Object-Oriented Programming:</strong></p>
+<ul>
+<li>While JavaScript has classes (introduced in ES6), TypeScript enhances them with features like access modifiers (<code>public</code>, <code>private</code>, <code>protected</code>) and abstract classes, which provide more robust object-oriented programming capabilities.</li>
+<li>TypeScript's class system feels more like traditional object-oriented languages, which can be beneficial for developers coming from those backgrounds.</li>
+</ul>
+<p><strong>Enums (Enumerations):</strong></p>
+<ul>
+<li>TypeScript offers enums, which allow you to define sets of named constants. This can make your code more readable and maintainable, especially when dealing with a fixed set of values.</li>
+<li>JavaScript doesn't have built-in enums.</li>
+</ul>
+<p><strong>Namespaces and Modules:</strong></p>
+<ul>
+<li>TypeScript provides namespaces (though modules are now generally preferred) for organizing code and preventing naming collisions.</li>
+<li>TypeScript has a very robust module system that works well with modern javascript module approaches.</li>
+<li>While JavaScript has modules (ES modules), TypeScript's module system integrates seamlessly with its type system, providing better tooling and type checking.</li>
+</ul>
+<p><strong>Decorators:</strong></p>
+<ul>
+<li>TypeScript supports decorators, which are a way to add metadata and modify classes, methods, or properties. They are often used in frameworks like Angular.</li>
+<li>Decorators are still an experimental feature in JavaScript.</li>
+</ul>
+<p><strong>Generics:</strong></p>
+<ul>
+<li>TypeScript's generics allow you to create reusable components that work with a variety of types. This enhances code flexibility and reduces code duplication.</li>
+<li>While Javascript can create very flexible code, generics improve the type safety of that code.</li>
+</ul>
+<p><strong>Type Inference:</strong></p>
+<ul>
+<li>While you can explicitly annotate types, TypeScript also has powerful type inference capabilities. It can often automatically determine the type of a variable or expression, reducing the need for explicit annotations.</li>
+<li>This makes typescript feel less verbose than some other strongly typed languages.</li>
+</ul>
+<p><strong>Improved DOM Manipulation:</strong></p>
+<ul>
+<li>TypeScript provides type definitions for the DOM, making it easier and safer to work with HTML elements. This reduces the risk of runtime errors when manipulating the DOM.</li>
+</ul></div>
             </div>
         </div>
 

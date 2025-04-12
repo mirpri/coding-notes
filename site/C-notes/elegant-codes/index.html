@@ -79,6 +79,19 @@
 </li>
                                 </ul>
                             </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Web</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Web/JavaScript/" class="dropdown-item">JavaScript</a>
+</li>
+                                    
+<li>
+    <a href="../../Web/TypeScript/" class="dropdown-item">TypeScript Learning</a>
+</li>
+                                </ul>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ms-md-auto">
@@ -146,6 +159,15 @@
               </ul>
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#_7" class="nav-link">无中间变量交换变量</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#algorithms" class="nav-link">Algorithms</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#kmp" class="nav-link">KMP 字符串匹配</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -608,7 +630,81 @@ int main() {
     return 0;
 }
 </code></pre>
-<p>其中，异或运算也可以用加减或乘除替代，但数据过大时可能溢出，乘除时要避免包含0。</p></div>
+<p>其中，异或运算也可以用加减或乘除替代，但数据过大时可能溢出，乘除时要避免包含0。</p>
+<h1 id="algorithms">Algorithms</h1>
+<h2 id="kmp">KMP 字符串匹配</h2>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
+string s, txt;
+vector&lt;int&gt; lsp;  // LSP: longest suffix which is also a prefix
+
+void initlsp() {
+    int n = s.size();
+    lsp.clear();
+    for (int i = 0; i &lt; n; i++) {
+        lsp.push_back(0);
+    }
+    int len = 0;
+    for (int i = 1; i &lt; n; i++) {  // NOTE: i start from 1
+        while (len &gt; 0 &amp;&amp; s[i] != s[len]) {
+            len = lsp[len - 1];  // fallback
+        }
+        if (s[i] == s[len]) {
+            len++;  // increment len when match
+        }
+        lsp[i] = len;
+    }
+}
+
+int match() {
+    int n = s.length(), m = txt.length();
+    int p = 0;
+    for (int i = 0; i &lt; m; i++) {
+        while (p &amp;&amp; txt[i] != s[p]) {
+            p=lsp[p-1];
+        }
+        if(txt[i]==s[p]){
+            p++;
+        }
+        if(p==n){
+            return i-p+1;
+        }
+    }
+
+    return -1;
+}
+
+int main() {
+    cout &lt;&lt; &quot;input pattern string: &quot;;
+    cin &gt;&gt; s;
+    initlsp();
+
+    cout &lt;&lt; &quot;LSP: &quot;;
+    for (int i : lsp) {
+        cout &lt;&lt; i &lt;&lt; ' ';
+    }
+    cout &lt;&lt; endl;
+
+    cout &lt;&lt; &quot;input text string: &quot;;
+    cin &gt;&gt; txt;
+    int ans = match();
+    if (ans &gt;= 0) {
+        cout &lt;&lt; &quot;index: &quot; &lt;&lt; match() &lt;&lt; endl;
+        cout &lt;&lt; txt &lt;&lt; endl;
+        for (int i = 0; i &lt; ans; i++) {
+            cout &lt;&lt; ' ';
+        }
+        for (int i = 0; i &lt; s.length(); i++) {
+            cout &lt;&lt; '^';
+        }
+    } else {
+        cout &lt;&lt; &quot;not found&quot;;
+    }
+    return 0;
+}
+</code></pre></div>
             </div>
         </div>
 

@@ -479,3 +479,81 @@ int main() {
 }
 ```
 其中，异或运算也可以用加减或乘除替代，但数据过大时可能溢出，乘除时要避免包含0。
+
+
+# Algorithms
+
+## KMP 字符串匹配
+```cpp
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+string s, txt;
+vector<int> lsp;  // LSP: longest suffix which is also a prefix
+
+void initlsp() {
+    int n = s.size();
+    lsp.clear();
+    for (int i = 0; i < n; i++) {
+        lsp.push_back(0);
+    }
+    int len = 0;
+    for (int i = 1; i < n; i++) {  // NOTE: i start from 1
+        while (len > 0 && s[i] != s[len]) {
+            len = lsp[len - 1];  // fallback
+        }
+        if (s[i] == s[len]) {
+            len++;  // increment len when match
+        }
+        lsp[i] = len;
+    }
+}
+
+int match() {
+    int n = s.length(), m = txt.length();
+    int p = 0;
+    for (int i = 0; i < m; i++) {
+        while (p && txt[i] != s[p]) {
+            p=lsp[p-1];
+        }
+        if(txt[i]==s[p]){
+            p++;
+        }
+        if(p==n){
+            return i-p+1;
+        }
+    }
+
+    return -1;
+}
+
+int main() {
+    cout << "input pattern string: ";
+    cin >> s;
+    initlsp();
+
+    cout << "LSP: ";
+    for (int i : lsp) {
+        cout << i << ' ';
+    }
+    cout << endl;
+
+    cout << "input text string: ";
+    cin >> txt;
+    int ans = match();
+    if (ans >= 0) {
+        cout << "index: " << match() << endl;
+        cout << txt << endl;
+        for (int i = 0; i < ans; i++) {
+            cout << ' ';
+        }
+        for (int i = 0; i < s.length(); i++) {
+            cout << '^';
+        }
+    } else {
+        cout << "not found";
+    }
+    return 0;
+}
+```
