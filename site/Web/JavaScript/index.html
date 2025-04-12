@@ -127,12 +127,42 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary" style="max-height: 70vh; overflow-y: auto;">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#javascript" class="nav-link">JavaScript</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#deciding-let-or-var" class="nav-link">Deciding let or var</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#and-compared" class="nav-link">== and === compared</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#array" class="nav-link">Array</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h1 id="javascript">JavaScript</h1>
+<h2 id="deciding-let-or-var">Deciding <code>let</code> or <code>var</code></h2>
+<p><code>let</code> is <strong>block-scoped</strong> and should be used in modern JavaScript for variable declarations. It prevents issues like variable hoisting and accidental re-declarations.<br />
+<code>var</code> is <strong>function-scoped</strong> and declarations are hoisted to the top of their scope, meaning you can use a var variable before its declaration in the code (though it will have a value of undefined). It is generally avoided in modern code due to its less predictable behavior.</p>
+<p><strong>Prefer let or const over var</strong>: let and const provide better scope management and are more explicit about variable mutability (whether the value can be changed).</p>
+<h2 id="and-compared"><code>==</code> and <code>===</code> compared</h2>
+<p><code>==</code> performs <strong>type coercion</strong>, meaning it converts the operands to the same type before comparing.<br />
+<code>===</code> is a strict equality operator that compares both value and type, making it more predictable and preferred in most cases.</p>
+<h2 id="array">Array</h2>
+<p>Arrays in JavaScript are used to store multiple values in a single variable. They are zero-indexed and come with built-in methods like <code>push</code>, <code>pop</code>, <code>map</code>, <code>filter</code>, and <code>reduce</code> for manipulation.</p>
+<p>Creating an array with size 10:</p>
+<pre><code class="language-js">let a=Array(10); // array of 10 empty item
+let b=Array(10).fill(0); // array of 10 zeros
+</code></pre></div>
             </div>
         </div>
 

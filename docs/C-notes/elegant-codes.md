@@ -483,6 +483,8 @@ int main() {
 
 # Algorithms
 
+Instances below are with advanced algorithms involved.
+
 ## KMP 字符串匹配
 ```cpp
 #include <iostream>
