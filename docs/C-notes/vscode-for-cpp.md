@@ -12,4 +12,8 @@ Equipped with a built-in **MinGW** compiler and meticulously configured settings
 ## Download
 💾 Download archive [here](https://github.com/mirpri/coding-notes/releases/download/1.0.0/VSCode-portable-for-cpp.7z).
 
+☁️ Alternative source
+[OneDrive](https://husteducn-my.sharepoint.com/:u:/g/personal/shizhuol_hust_edu_cn/EVR5IXSU2GxFjGkgRCP1xYkBdeIkdHQFHGFAWJ335j2k5A?e=LZLq6F)
+[Gitee](https://gitee.com/mirpri/vscode-for-cpp)
+
 📢 [Release Page](https://github.com/mirpri/coding-notes/releases/tag/1.0.0)
