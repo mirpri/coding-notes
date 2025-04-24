@@ -142,6 +142,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#promise" class="nav-link">Promise</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -150,10 +154,29 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="javascript">JavaScript</h1>
+<blockquote>
+<p><strong>Reference</strong></p>
+<p><a href="https://www.javascripttutorial.net/es6/">ES6 Tutorial</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN web docs</a></p>
+</blockquote>
 <h2 id="deciding-let-or-var">Deciding <code>let</code> or <code>var</code></h2>
 <p><code>let</code> is <strong>block-scoped</strong> and should be used in modern JavaScript for variable declarations. It prevents issues like variable hoisting and accidental re-declarations.<br />
 <code>var</code> is <strong>function-scoped</strong> and declarations are hoisted to the top of their scope, meaning you can use a var variable before its declaration in the code (though it will have a value of undefined). It is generally avoided in modern code due to its less predictable behavior.</p>
 <p><strong>Prefer let or const over var</strong>: let and const provide better scope management and are more explicit about variable mutability (whether the value can be changed).</p>
+<pre><code class="language-js">for(let v=0;v&lt;5;v++){
+    setTimeout(() =&gt; {
+        console.log(v);
+    }, 1000);
+}
+</code></pre>
+<p>output: <code>0 1 2 3 4</code></p>
+<pre><code class="language-js">for(var v=0;v&lt;5;v++){
+    setTimeout(() =&gt; {
+        console.log(v);
+    }, 1000);
+}
+</code></pre>
+<p>output: <code>5 5 5 5 5</code></p>
 <h2 id="and-compared"><code>==</code> and <code>===</code> compared</h2>
 <p><code>==</code> performs <strong>type coercion</strong>, meaning it converts the operands to the same type before comparing.<br />
 <code>===</code> is a strict equality operator that compares both value and type, making it more predictable and preferred in most cases.</p>
@@ -162,7 +185,66 @@
 <p>Creating an array with size 10:</p>
 <pre><code class="language-js">let a=Array(10); // array of 10 empty item
 let b=Array(10).fill(0); // array of 10 zeros
-</code></pre></div>
+</code></pre>
+<h2 id="promise">Promise</h2>
+<p>A JavaScript Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. It's a way to handle operations that might take some time to complete, like fetching data from an API or reading a file.</p>
+<p>Here is an simple example:</p>
+<pre><code class="language-ts">function judgeOddNumber(x: number) {
+  return new Promise&lt;string&gt;((resolve, reject) =&gt; {
+    if (x % 2 !== 0) {
+      resolve(x+&quot; is odd number&quot;); //simulate success
+    }
+    else {
+      reject(x+&quot; is even number&quot;); //simulate an error
+    }
+  });
+}
+
+
+// const promise = hi;
+function successCallback(result: string) {
+  console.log(`success: ${result}`);
+}
+
+function failureCallback(error: string) {
+  console.error(`error: ${error}`);
+}
+
+judgeOddNumber(3).then(successCallback, failureCallback);
+judgeOddNumber(10).then(successCallback, failureCallback);
+</code></pre>
+<p><code>Promise</code> objects manage asynchronous execution flow based on operation outcomes. When the operation succeeds and <code>resolve()</code> is invoked, the Promise transitions to fulfilled state, executing the first callback passed to <code>.then()</code> (in this example, <code>successCallback</code>). Conversely, when the operation fails and <code>reject()</code> is called, the Promise enters rejected state, triggering the second callback in <code>.then()</code> (here, <code>failureCallback</code>). 
+JavaScript Promises offer several key benefits when dealing with asynchronous operations:</p>
+<p><strong>1. Improved Readability and Maintainability:</strong></p>
+<ul>
+<li>
+<p>flatten nested callback, avoid <em>"Callback Hell"</em> structures. </p>
+</li>
+<li>
+<p>chaining with .then() provides a clear, sequential flow for asynchronous operations. </p>
+</li>
+</ul>
+<p><strong>2. Enhanced Error Handling:</strong></p>
+<ul>
+<li>
+<p>Centralized Error Catching with <code>.catch()</code> at the end</p>
+</li>
+<li>
+<p>Provide a consistent way to handle errors in asynchronous code. </p>
+</li>
+</ul>
+<p><strong>3. Facilitates Asynchronous Code Management:</strong></p>
+<ul>
+<li>Chain multiple asynchronous operations in a specific order. </li>
+</ul>
+<p>Parallel Execution (with Promise.all()): You can run multiple asynchronous tasks concurrently using Promise.all() and wait for all of them to resolve before proceeding. </p>
+<ul>
+<li>Allow for more flexible composition of asynchronous operations. </li>
+</ul>
+<p><strong>4. Integration with Modern Features:</strong></p>
+<ul>
+<li><em>Foundation for the async/await syntax</em>, which simplifies asynchronous code further. </li>
+</ul></div>
             </div>
         </div>
 
