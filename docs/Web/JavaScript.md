@@ -36,11 +36,22 @@ output: `5 5 5 5 5`
 ## Array
 Arrays in JavaScript are used to store multiple values in a single variable. They are zero-indexed and come with built-in methods like `push`, `pop`, `map`, `filter`, and `reduce` for manipulation.
 
+JavaScript arrays are resizable and **can contain a mix of different data types**. (When those characteristics are undesirable, use typed arrays instead.)
+
+### Create
 Creating an array with size 10:
 ```js
-let a=Array(10); // array of 10 empty item
+let a=Array(10); // array of 10 empty slots
 let b=Array(10).fill(0); // array of 10 zeros
 ```
+`a=Array(10)` is the same as:
+```js
+let a=[];
+a.length=10;
+//a.fill(0) won't work here!
+```
+Both ways create an array with 10 empty slots — not undefined, not null, just empty (sparse).
+
 
 ## Promise
 A JavaScript Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. It's a way to handle operations that might take some time to complete, like fetching data from an API or reading a file.
@@ -72,6 +83,40 @@ judgeOddNumber(3).then(successCallback, failureCallback);
 judgeOddNumber(10).then(successCallback, failureCallback);
 ```
 `Promise` objects manage asynchronous execution flow based on operation outcomes. When the operation succeeds and `resolve()` is invoked, the Promise transitions to fulfilled state, executing the first callback passed to `.then()` (in this example, `successCallback`). Conversely, when the operation fails and `reject()` is called, the Promise enters rejected state, triggering the second callback in `.then()` (here, `failureCallback`). 
+
+Creating a promise chain:
+```ts
+function addOne(x: number) {
+  return new Promise<number>((resolve, reject) => {
+    if (x > 0) resolve(x + 1);
+    else reject("x is not positive");
+  });
+}
+
+function multiplyByTwo(x: number) {
+  return new Promise<number>((resolve, reject) => {
+    if (x > 0) resolve(x * 2);
+    else reject("x is not positive");
+  });
+}
+
+function outputResult(result: number) {
+  console.log(`The result is ${result}`);
+}
+
+function outputError(error: string) {
+  console.error(`Error: ${error}`);
+}
+
+addOne(5).then(multiplyByTwo).then(addOne)
+  .then(outputResult).catch(outputError);
+// (5+1)*2+1=13
+
+addOne(-5).then(multiplyByTwo).then(addOne)
+  .then(outputResult).catch(outputError);
+// Error
+```
+
 JavaScript Promises offer several key benefits when dealing with asynchronous operations:
 
 **1. Improved Readability and Maintainability:**

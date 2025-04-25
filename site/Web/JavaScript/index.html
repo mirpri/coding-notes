@@ -140,6 +140,10 @@
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#array" class="nav-link">Array</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#create" class="nav-link">Create</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#promise" class="nav-link">Promise</a>
@@ -182,10 +186,18 @@
 <code>===</code> is a strict equality operator that compares both value and type, making it more predictable and preferred in most cases.</p>
 <h2 id="array">Array</h2>
 <p>Arrays in JavaScript are used to store multiple values in a single variable. They are zero-indexed and come with built-in methods like <code>push</code>, <code>pop</code>, <code>map</code>, <code>filter</code>, and <code>reduce</code> for manipulation.</p>
+<p>JavaScript arrays are resizable and <strong>can contain a mix of different data types</strong>. (When those characteristics are undesirable, use typed arrays instead.)</p>
+<h3 id="create">Create</h3>
 <p>Creating an array with size 10:</p>
-<pre><code class="language-js">let a=Array(10); // array of 10 empty item
+<pre><code class="language-js">let a=Array(10); // array of 10 empty slots
 let b=Array(10).fill(0); // array of 10 zeros
 </code></pre>
+<p><code>a=Array(10)</code> is the same as:</p>
+<pre><code class="language-js">let a=[];
+a.length=10;
+//a.fill(0) won't work here!
+</code></pre>
+<p>Both ways create an array with 10 empty slots — not undefined, not null, just empty (sparse).</p>
 <h2 id="promise">Promise</h2>
 <p>A JavaScript Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. It's a way to handle operations that might take some time to complete, like fetching data from an API or reading a file.</p>
 <p>Here is an simple example:</p>
@@ -213,8 +225,39 @@ function failureCallback(error: string) {
 judgeOddNumber(3).then(successCallback, failureCallback);
 judgeOddNumber(10).then(successCallback, failureCallback);
 </code></pre>
-<p><code>Promise</code> objects manage asynchronous execution flow based on operation outcomes. When the operation succeeds and <code>resolve()</code> is invoked, the Promise transitions to fulfilled state, executing the first callback passed to <code>.then()</code> (in this example, <code>successCallback</code>). Conversely, when the operation fails and <code>reject()</code> is called, the Promise enters rejected state, triggering the second callback in <code>.then()</code> (here, <code>failureCallback</code>). 
-JavaScript Promises offer several key benefits when dealing with asynchronous operations:</p>
+<p><code>Promise</code> objects manage asynchronous execution flow based on operation outcomes. When the operation succeeds and <code>resolve()</code> is invoked, the Promise transitions to fulfilled state, executing the first callback passed to <code>.then()</code> (in this example, <code>successCallback</code>). Conversely, when the operation fails and <code>reject()</code> is called, the Promise enters rejected state, triggering the second callback in <code>.then()</code> (here, <code>failureCallback</code>). </p>
+<p>Creating a promise chain:</p>
+<pre><code class="language-ts">function addOne(x: number) {
+  return new Promise&lt;number&gt;((resolve, reject) =&gt; {
+    if (x &gt; 0) resolve(x + 1);
+    else reject(&quot;x is not positive&quot;);
+  });
+}
+
+function multiplyByTwo(x: number) {
+  return new Promise&lt;number&gt;((resolve, reject) =&gt; {
+    if (x &gt; 0) resolve(x * 2);
+    else reject(&quot;x is not positive&quot;);
+  });
+}
+
+function outputResult(result: number) {
+  console.log(`The result is ${result}`);
+}
+
+function outputError(error: string) {
+  console.error(`Error: ${error}`);
+}
+
+addOne(5).then(multiplyByTwo).then(addOne)
+  .then(outputResult).catch(outputError);
+// (5+1)*2+1=13
+
+addOne(-5).then(multiplyByTwo).then(addOne)
+  .then(outputResult).catch(outputError);
+// Error
+</code></pre>
+<p>JavaScript Promises offer several key benefits when dealing with asynchronous operations:</p>
 <p><strong>1. Improved Readability and Maintainability:</strong></p>
 <ul>
 <li>
