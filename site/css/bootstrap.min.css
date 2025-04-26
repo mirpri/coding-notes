@@ -86,7 +86,8 @@
     --bs-body-font-size: 1rem;
     --bs-body-font-weight: 400;
     --bs-body-line-height: 1.5;
-    --bs-body-color: #2d2d2d; /*original #495057;*/
+    --bs-body-color: #2d2d2d;
+    /*original #495057;*/
     --bs-body-color-rgb: 73, 80, 87;
     --bs-body-bg: #fff;
     --bs-body-bg-rgb: 255, 255, 255;
@@ -13900,8 +13901,14 @@ fieldset:disabled .btn {
     }
 }
 
-.navbar.bg-primary {
-    background-image: linear-gradient(to right, #50adeb, #c22fe7 60%, #d96b2c)
+.navbar.bg-primary {    
+    background: linear-gradient(90deg, #ff9a9e, #fec7b8, #b8a4e9, #faade4, #ff9a9e, #fec7b8);
+    background-size: 500% 200%;
+    animation: gradientAnimation 15s linear infinite;
+}
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 .navbar.bg-secondary {

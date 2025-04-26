@@ -92,13 +92,61 @@ pre, .rst-content tt {
     box-shadow: 0 0 5px rgba(0,0,0,.1);
 }
 
-code.code-large, .rst-content tt.code-large {
+/* code.code-large, .rst-content tt.code-large {
     font-size: 90%;
+} */
+/* Target code blocks with language classes - correctly targeting pre>code with language classes */
+pre {
+    position: relative;
+}
+
+pre code[class*="language-"]::before {
+    content: attr(class);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    color: #555;
+    padding: 0.3em 0.6em;
+    font-size: 0.8em;
+    font-weight: 500;
+    border-radius: 3px 3px 0 0;
+    border-bottom: 1px solid #eee;
+    box-sizing: border-box;
+}
+
+/* Language-specific labels */
+pre code.language-python::before { content: "Python"; }
+pre code.language-javascript::before, 
+pre code.language-js::before { content: "JavaScript"; }
+pre code.language-bash::before { content: "Bash"; }
+pre code.language-css::before { content: "CSS"; }
+pre code.language-html::before { content: "HTML"; }
+pre code.language-cpp::before { content: "C++"; }
+pre code.language-c::before { content: "C"; }
+pre code.language-json::before { content: "JSON"; }
+pre code.language-typescript::before,
+pre code.language-ts::before { content: "TypeScript"; }
+pre code.language-php::before { content: "PHP"; }
+pre code.language-ruby::before { content: "Ruby"; }
+pre code.language-go::before { content: "Go"; }
+pre code.language-rust::before { content: "Rust"; }
+pre code.language-java::before { content: "Java"; }
+pre code.language-sql::before { content: "SQL"; }
+pre code.language-xml::before { content: "XML"; }
+pre code.language-yaml::before { content: "YAML"; }
+pre code.language-shell::before { content: "Shell"; }
+
+/* Add padding to code blocks to accommodate the label */
+pre code[class*="language-"] {
+    padding-top: 2em !important;
 }
 
 code {
     padding: 2px 5px;
-    background-color: #efefef;
+    background-color: #eee;
     border: solid 1px var(--bs-border-color);
     border-radius: 5px;
     color: var(--bs-body-color);
@@ -112,7 +160,7 @@ pre code {
     white-space: pre;
     word-wrap: normal;
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    font-size: 12px;
+    /* font-size: 12px; */
 }
 
 kbd {
@@ -146,7 +194,9 @@ footer {
 }
 
 .navbar{
-    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    margin: 0 10px;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
 }
 
 .modal-dialog {
@@ -245,10 +295,16 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 
 blockquote {
     background-color: rgb(255, 234, 192);
+    padding: 5px;
     padding-left: 10px;
     border-left: 4px solid #ffa200;
     border-radius: 8px;
     box-shadow: 0 0 6px rgba(0,0,0,.1);
+}
+
+blockquote p {
+    margin: 0;
+    padding: 0;
 }
 
 .admonition, details {

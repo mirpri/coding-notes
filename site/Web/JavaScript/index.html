@@ -134,8 +134,16 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#and-compared" class="nav-link">== and === compared</a>
+            <li class="nav-item" data-bs-level="2"><a href="#type" class="nav-link">type</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#checking-types" class="nav-link">Checking types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#and-compared" class="nav-link">== and === compared</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#array" class="nav-link">Array</a>
@@ -159,7 +167,7 @@
 
 <h1 id="javascript">JavaScript</h1>
 <blockquote>
-<p><strong>Reference</strong></p>
+<p>📜 <strong>Reference</strong></p>
 <p><a href="https://www.javascripttutorial.net/es6/">ES6 Tutorial</a>
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN web docs</a></p>
 </blockquote>
@@ -181,7 +189,28 @@
 }
 </code></pre>
 <p>output: <code>5 5 5 5 5</code></p>
-<h2 id="and-compared"><code>==</code> and <code>===</code> compared</h2>
+<h2 id="type">type</h2>
+<p>JavaScript uses dynamic typing. Variable's type is set when you assign a value to it and be automatically coverted during operations.</p>
+<p>You cannot explicitly assign types to variables. (<a href="./typescript">TypeScript</a> can do that!)</p>
+<blockquote>
+<p>🧩 Dynamic typing provides convenience and flexibility but may also lead to confusion. Some TypeScript will be used in this document to annotate types to make it clearer.</p>
+</blockquote>
+<h3 id="checking-types">Checking types</h3>
+<p>use <code>typeof variable</code> to check the type.</p>
+<pre><code class="language-js">console.log(typeof 10) // number
+console.log(typeof &quot;10&quot;) // string
+console.log(typeof true) // boolean
+console.log(typeof undefined) // undefined
+console.log(typeof null) // object
+
+let a=&quot;10&quot;
+let b=10
+console.log(typeof a) // string
+console.log(typeof b) // number
+console.log(typeof (a+b)) // string
+console.log(typeof (a-b)) // number
+</code></pre>
+<h3 id="and-compared"><code>==</code> and <code>===</code> compared</h3>
 <p><code>==</code> performs <strong>type coercion</strong>, meaning it converts the operands to the same type before comparing.<br />
 <code>===</code> is a strict equality operator that compares both value and type, making it more predictable and preferred in most cases.</p>
 <h2 id="array">Array</h2>

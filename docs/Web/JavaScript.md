@@ -1,6 +1,6 @@
 # JavaScript
 
-> **Reference**
+> 📜 **Reference**
 >
 > [ES6 Tutorial](https://www.javascripttutorial.net/es6/)
 > [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -29,7 +29,31 @@ for(var v=0;v<5;v++){
 ```
 output: `5 5 5 5 5`
 
-## `==` and `===` compared
+## type
+JavaScript uses dynamic typing. Variable's type is set when you assign a value to it and be automatically coverted during operations.
+
+You cannot explicitly assign types to variables. ([TypeScript](./typescript) can do that!)
+
+> 🧩 Dynamic typing provides convenience and flexibility but may also lead to confusion. Some TypeScript will be used in this document to annotate types to make it clearer.
+
+### Checking types
+use `typeof variable` to check the type.
+```js
+console.log(typeof 10) // number
+console.log(typeof "10") // string
+console.log(typeof true) // boolean
+console.log(typeof undefined) // undefined
+console.log(typeof null) // object
+
+let a="10"
+let b=10
+console.log(typeof a) // string
+console.log(typeof b) // number
+console.log(typeof (a+b)) // string
+console.log(typeof (a-b)) // number
+```
+
+### `==` and `===` compared
 `==` performs **type coercion**, meaning it converts the operands to the same type before comparing.  
 `===` is a strict equality operator that compares both value and type, making it more predictable and preferred in most cases.
 
