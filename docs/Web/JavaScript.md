@@ -32,7 +32,7 @@ output: `5 5 5 5 5`
 ## type
 JavaScript uses dynamic typing. Variable's type is set when you assign a value to it and be automatically coverted during operations.
 
-You cannot explicitly assign types to variables. ([TypeScript](./typescript) can do that!)
+You cannot explicitly assign types to variables. ([TypeScript](../typescript) can do that!)
 
 > 🧩 Dynamic typing provides convenience and flexibility but may also lead to confusion. Some TypeScript will be used in this document to annotate types to make it clearer.
 
