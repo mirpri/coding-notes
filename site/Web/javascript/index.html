@@ -121,7 +121,7 @@
                     <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary" >
     <div class="navbar-header">
         <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
+            <span class="fa fa-angle-down"></span> Table of Contents
         </button>
     </div>
 
@@ -157,6 +157,18 @@
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#promise" class="nav-link">Promise</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#creating-a-promise-chain" class="nav-link">Creating a promise chain</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#then-and-catch" class="nav-link">then and catch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#summary" class="nav-link">Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
               </ul>
@@ -256,7 +268,7 @@ judgeOddNumber(3).then(successCallback, failureCallback);
 judgeOddNumber(10).then(successCallback, failureCallback);
 </code></pre>
 <p><code>Promise</code> objects manage asynchronous execution flow based on operation outcomes. When the operation succeeds and <code>resolve()</code> is invoked, the Promise transitions to fulfilled state, executing the first callback passed to <code>.then()</code> (in this example, <code>successCallback</code>). Conversely, when the operation fails and <code>reject()</code> is called, the Promise enters rejected state, triggering the second callback in <code>.then()</code> (here, <code>failureCallback</code>). </p>
-<p>Creating a promise chain:</p>
+<h3 id="creating-a-promise-chain">Creating a promise chain</h3>
 <pre><code class="language-ts">function addOne(x: number) {
   return new Promise&lt;number&gt;((resolve, reject) =&gt; {
     if (x &gt; 0) resolve(x + 1);
@@ -287,6 +299,22 @@ addOne(-5).then(multiplyByTwo).then(addOne)
   .then(outputResult).catch(outputError);
 // Error
 </code></pre>
+<h3 id="then-and-catch"><code>then</code> and <code>catch</code></h3>
+<p>You can use the second parameter of <code>.then()</code> or <code>.catch()</code> to handle errors.</p>
+<p>Use <code>.catch()</code> at the end of a chain to provide centralized error handling is cleaner and avoids repetitive error handling code.
+Use <code>.then()</code> with Two Parameters for Local Error Handling immediately within the same <code>.then()</code>.</p>
+<p>Priorty:
+- The first parameter of <code>.then()</code> (the success handler) has the highest priority. It is called if the Promise resolves successfully.
+- The second parameter of <code>.then()</code> (the failure handler) has the next highest priority. It is called if the Promise rejects and a failure handler is provided.
+- The trailing <code>.catch()</code> has the lowest priority. It is used to handle failures and catches errors from anywhere in the chain, including errors thrown in the success handlers of .then().</p>
+<pre><code class="language-ts">function output1() { console.log(&quot;output1!&quot;); }
+function output2() { console.log(&quot;output2!&quot;); }
+function output3() { console.log(&quot;output3!&quot;); }
+
+addOne(-5).then(output1, output2).catch(output3);
+// output2!
+</code></pre>
+<h3 id="summary">Summary</h3>
 <p>JavaScript Promises offer several key benefits when dealing with asynchronous operations:</p>
 <p><strong>1. Improved Readability and Maintainability:</strong></p>
 <ul>

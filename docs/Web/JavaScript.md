@@ -108,7 +108,7 @@ judgeOddNumber(10).then(successCallback, failureCallback);
 ```
 `Promise` objects manage asynchronous execution flow based on operation outcomes. When the operation succeeds and `resolve()` is invoked, the Promise transitions to fulfilled state, executing the first callback passed to `.then()` (in this example, `successCallback`). Conversely, when the operation fails and `reject()` is called, the Promise enters rejected state, triggering the second callback in `.then()` (here, `failureCallback`). 
 
-Creating a promise chain:
+### Creating a promise chain
 ```ts
 function addOne(x: number) {
   return new Promise<number>((resolve, reject) => {
@@ -140,7 +140,26 @@ addOne(-5).then(multiplyByTwo).then(addOne)
   .then(outputResult).catch(outputError);
 // Error
 ```
+### `then` and `catch`
+You can use the second parameter of `.then()` or `.catch()` to handle errors.
 
+Use `.catch()` at the end of a chain to provide centralized error handling is cleaner and avoids repetitive error handling code.
+Use `.then()` with Two Parameters for Local Error Handling immediately within the same `.then()`.
+
+Priorty:
+- The first parameter of `.then()` (the success handler) has the highest priority. It is called if the Promise resolves successfully.
+- The second parameter of `.then()` (the failure handler) has the next highest priority. It is called if the Promise rejects and a failure handler is provided.
+- The trailing `.catch()` has the lowest priority. It is used to handle failures and catches errors from anywhere in the chain, including errors thrown in the success handlers of .then().
+
+```ts
+function output1() { console.log("output1!"); }
+function output2() { console.log("output2!"); }
+function output3() { console.log("output3!"); }
+
+addOne(-5).then(output1, output2).catch(output3);
+// output2!
+```
+### Summary
 JavaScript Promises offer several key benefits when dealing with asynchronous operations:
 
 **1. Improved Readability and Maintainability:**
