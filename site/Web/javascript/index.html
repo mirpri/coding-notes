@@ -165,6 +165,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="3"><a href="#proccessing-multiple-promises" class="nav-link">Proccessing multiple promises</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="3"><a href="#summary" class="nav-link">Summary</a>
               <ul class="nav flex-column">
               </ul>
@@ -313,6 +317,43 @@ function output3() { console.log(&quot;output3!&quot;); }
 
 addOne(-5).then(output1, output2).catch(output3);
 // output2!
+</code></pre>
+<h3 id="proccessing-multiple-promises">Proccessing multiple promises</h3>
+<p>JavaScript provides several methods to work with multiple Promises simultaneously. These methods allow you to manage and process asynchronous operations efficiently:</p>
+<pre><code class="language-js">let p1 = new Promise((resolve) =&gt; {
+    setTimeout(() =&gt; {
+        resolve(&quot;p1 resolved after 1 second&quot;);
+    }, 1000);
+});
+
+let p2 = new Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; {
+        reject(&quot;p2 rejected after 2 seconds&quot;);
+    }, 2000);
+});
+
+let p3 = new Promise((resolve) =&gt; {
+    setTimeout(() =&gt; {
+        resolve(&quot;p3 resolved after 3 seconds&quot;);
+    }, 3000);
+});
+
+function rejected(s) {
+    console.log(&quot;Promise rejected: &quot;, s);
+}
+function resolved(s) {
+    console.log(&quot;Promise rejected: &quot;, s);
+}
+
+Promise.all([p1, p2, p3]).then(resolved, rejected); //p2 rejected after 2 seconds
+Promise.any([p1, p2, p3]).then(resolved, rejected); //p1 resolved after 1 second
+Promise.race([p1, p2, p3]).then(resolved, rejected); //p1 resolved after 1 second
+Promise.allSettled([p1, p2, p3]).then(resolved, rejected); 
+/* Promise rejected:  [
+  { status: 'fulfilled', value: 'p1 resolved after 1 second' },
+  { status: 'rejected', reason: 'p2 rejected after 2 seconds' },
+  { status: 'fulfilled', value: 'p3 resolved after 3 seconds' }
+]*/
 </code></pre>
 <h3 id="summary">Summary</h3>
 <p>JavaScript Promises offer several key benefits when dealing with asynchronous operations:</p>

@@ -159,6 +159,46 @@ function output3() { console.log("output3!"); }
 addOne(-5).then(output1, output2).catch(output3);
 // output2!
 ```
+### Proccessing multiple promises
+JavaScript provides several methods to work with multiple Promises simultaneously. These methods allow you to manage and process asynchronous operations efficiently:
+
+```js
+let p1 = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve("p1 resolved after 1 second");
+    }, 1000);
+});
+
+let p2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        reject("p2 rejected after 2 seconds");
+    }, 2000);
+});
+
+let p3 = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve("p3 resolved after 3 seconds");
+    }, 3000);
+});
+
+function rejected(s) {
+    console.log("Promise rejected: ", s);
+}
+function resolved(s) {
+    console.log("Promise rejected: ", s);
+}
+
+Promise.all([p1, p2, p3]).then(resolved, rejected); //p2 rejected after 2 seconds
+Promise.any([p1, p2, p3]).then(resolved, rejected); //p1 resolved after 1 second
+Promise.race([p1, p2, p3]).then(resolved, rejected); //p1 resolved after 1 second
+Promise.allSettled([p1, p2, p3]).then(resolved, rejected); 
+/* Promise rejected:  [
+  { status: 'fulfilled', value: 'p1 resolved after 1 second' },
+  { status: 'rejected', reason: 'p2 rejected after 2 seconds' },
+  { status: 'fulfilled', value: 'p3 resolved after 3 seconds' }
+]*/
+```
+
 ### Summary
 JavaScript Promises offer several key benefits when dealing with asynchronous operations:
 
