@@ -225,3 +225,51 @@ Parallel Execution (with Promise.all()): You can run multiple asynchronous tasks
 **4. Integration with Modern Features:**
 
 - *Foundation for the async/await syntax*, which simplifies asynchronous code further. 
+
+## Event Loop
+![alt text](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model/runtime-environment-diagram.svg)
+
+If the code needs to perform asynchronous action, that halts the whole program—the nature of JavaScript as a web scripting language requires it to be never blocking. Therefore, the code that handles the completion of that asynchronous action is defined as a callback. This callback defines a job, which gets placed into a job queue—or, in HTML terminology, an event loop—once the action is completed.
+
+Every time, the agent pulls a job from the queue and executes it. When the job is executed, it may create more jobs, which are added to the end of the queue. Jobs can also be added via the completion of asynchronous platform mechanisms, such as timers, I/O, and events. A job is considered completed when the stack is empty; then, the next job is pulled from the queue. Jobs might not be pulled with uniform priority—for example, HTML event loops split jobs into two categories: tasks and microtasks. Microtasks have higher priority and the microtask queue is drained first before the task queue is pulled. For more information, check the HTML microtask guide. If the job queue is empty, the agent waits for more jobs to be added.
+
+### Comparing Asynchronous APIs: Task vs Microtask Priority
+
+JavaScript has several ways to schedule asynchronous code execution, each with different priority levels in the event loop:
+
+```js
+console.log("Script start");
+
+setTimeout(() => console.log("setTimeout"), 0);
+
+Promise.resolve()
+  .then(() => console.log("Promise 1"))
+  .then(() => console.log("Promise 2"));
+
+queueMicrotask(() => console.log("queueMicrotask"));
+
+console.log("Script end");
+
+// Output:
+// Script start
+// Script end
+// Promise 1
+// queueMicrotask
+// Promise 2
+// setTimeout
+```
+
+#### Priority Order (highest to lowest):
+
+1. **Synchronous code**: Always runs first and blocks execution until complete
+    - Example: `console.log("Script start")`, `console.log("Script end")`
+
+2. **Microtasks**: Run after synchronous code and before rendering or tasks
+    - **Promise callbacks**: `.then()`, `.catch()`, `.finally()`
+    - **queueMicrotask()**: Explicitly queue a function as a microtask
+    - **MutationObserver callbacks**: From DOM changes
+
+3. **Tasks (Macrotasks)**: Run after all microtasks are processed
+    - **setTimeout/setInterval**: Timer-based callbacks
+    - **DOM event callbacks**: User interactions (clicks, keyboard events)
+    - **requestAnimationFrame**: Visual updates (runs before rendering)

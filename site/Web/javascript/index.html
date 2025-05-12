@@ -175,6 +175,14 @@
             </li>
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#event-loop" class="nav-link">Event Loop</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#comparing-asynchronous-apis-task-vs-microtask-priority" class="nav-link">Comparing Asynchronous APIs: Task vs Microtask Priority</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -386,7 +394,58 @@ Promise.allSettled([p1, p2, p3]).then(resolved, rejected);
 <p><strong>4. Integration with Modern Features:</strong></p>
 <ul>
 <li><em>Foundation for the async/await syntax</em>, which simplifies asynchronous code further. </li>
-</ul></div>
+</ul>
+<h2 id="event-loop">Event Loop</h2>
+<p><img alt="alt text" src="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model/runtime-environment-diagram.svg" /></p>
+<p>If the code needs to perform asynchronous action, that halts the whole program—the nature of JavaScript as a web scripting language requires it to be never blocking. Therefore, the code that handles the completion of that asynchronous action is defined as a callback. This callback defines a job, which gets placed into a job queue—or, in HTML terminology, an event loop—once the action is completed.</p>
+<p>Every time, the agent pulls a job from the queue and executes it. When the job is executed, it may create more jobs, which are added to the end of the queue. Jobs can also be added via the completion of asynchronous platform mechanisms, such as timers, I/O, and events. A job is considered completed when the stack is empty; then, the next job is pulled from the queue. Jobs might not be pulled with uniform priority—for example, HTML event loops split jobs into two categories: tasks and microtasks. Microtasks have higher priority and the microtask queue is drained first before the task queue is pulled. For more information, check the HTML microtask guide. If the job queue is empty, the agent waits for more jobs to be added.</p>
+<h3 id="comparing-asynchronous-apis-task-vs-microtask-priority">Comparing Asynchronous APIs: Task vs Microtask Priority</h3>
+<p>JavaScript has several ways to schedule asynchronous code execution, each with different priority levels in the event loop:</p>
+<pre><code class="language-js">console.log(&quot;Script start&quot;);
+
+setTimeout(() =&gt; console.log(&quot;setTimeout&quot;), 0);
+
+Promise.resolve()
+  .then(() =&gt; console.log(&quot;Promise 1&quot;))
+  .then(() =&gt; console.log(&quot;Promise 2&quot;));
+
+queueMicrotask(() =&gt; console.log(&quot;queueMicrotask&quot;));
+
+console.log(&quot;Script end&quot;);
+
+// Output:
+// Script start
+// Script end
+// Promise 1
+// queueMicrotask
+// Promise 2
+// setTimeout
+</code></pre>
+<h4 id="priority-order-highest-to-lowest">Priority Order (highest to lowest):</h4>
+<ol>
+<li>
+<p><strong>Synchronous code</strong>: Always runs first and blocks execution until complete</p>
+<ul>
+<li>Example: <code>console.log("Script start")</code>, <code>console.log("Script end")</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Microtasks</strong>: Run after synchronous code and before rendering or tasks</p>
+<ul>
+<li><strong>Promise callbacks</strong>: <code>.then()</code>, <code>.catch()</code>, <code>.finally()</code></li>
+<li><strong>queueMicrotask()</strong>: Explicitly queue a function as a microtask</li>
+<li><strong>MutationObserver callbacks</strong>: From DOM changes</li>
+</ul>
+</li>
+<li>
+<p><strong>Tasks (Macrotasks)</strong>: Run after all microtasks are processed</p>
+<ul>
+<li><strong>setTimeout/setInterval</strong>: Timer-based callbacks</li>
+<li><strong>DOM event callbacks</strong>: User interactions (clicks, keyboard events)</li>
+<li><strong>requestAnimationFrame</strong>: Visual updates (runs before rendering)</li>
+</ul>
+</li>
+</ol></div>
             </div>
         </div>
 
