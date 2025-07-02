@@ -24,7 +24,49 @@ iso文件分为在线安装版和离线安装版。
 ## Install neccessary software
 
 ### 中文输入法
-系统自带的输入法
+卸载系统自带的输入法
+```bash
+sudo apt purge fcitx*
+sudo apt purge ibus*
+```
+
+安装fcitx5拼音输入法
+
+```bash
+sudo apt install fcitx5 fcitx5-pinyin fcitx5-config-qt
+```
+
+设置为默认
+```bash
+im-config -n fcitx5
+```
+
+使更改生效
+```bash
+source ~/.profile
+```
+
+重新启动后才可以成功打出汉字
 
 ### winscp
-使用你的其他电脑查看、修改linux上的文件，或将新的文件复制进来。
+使用你的windows电脑查看/linux上的文件，或将新的文件复制进来。
+接下来需要进入到Ubuntu中，查看一下是否开启OpenSSH服务
+
+```bash
+sudo systemctl status ssh
+```
+
+如果未安装ssh，需要安装ssh服务
+
+```bash
+sudo apt install openssh-server
+```
+
+安装后，启动ssh服务
+
+```bash
+sudo systemctl start ssh
+```
+然后再检查一下ssh服务状态，显示active就说明已经安装成功
+
+此时从windows端WinSCP新建连接，选择SMTP协议，输入linux设备的ip和用户名密码即可进入linux文件系统。
