@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Set up Linux - My Coding Notes</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+    
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-33SKNTLRN6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-33SKNTLRN6');
+    </script>
+
+
+    <body>
+        <div class="white-shade"></div>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">My Coding Notes</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Welcome</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">C notes</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../C-notes/cpp-features/" class="dropdown-item">C++ Features</a>
+</li>
+                                    
+<li>
+    <a href="../C-notes/elegant-codes/" class="dropdown-item">Elegant Codes</a>
+</li>
+                                    
+<li>
+    <a href="../C-notes/try-something-in-c/" class="dropdown-item">Try something in C</a>
+</li>
+                                    
+<li>
+    <a href="../C-notes/vscode-for-cpp/" class="dropdown-item">VS Code Portable for C++</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Deep Learning</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../Deep-Learning/pytorch/" class="dropdown-item">Deep learning with PyTorch</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Linux</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Set up Linux</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Web</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../Web/JavaScript/" class="dropdown-item">JavaScript</a>
+</li>
+                                    
+<li>
+    <a href="../Web/TypeScript/" class="dropdown-item">TypeScript Learning</a>
+</li>
+                                    
+<li>
+    <a href="../Web/node/" class="dropdown-item">Node.js</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../Deep-Learning/pytorch/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../Web/JavaScript/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary" >
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span> Table of Contents
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary" style="max-height: 70vh; overflow-y: auto;">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#set-up-linux" class="nav-link">Set up Linux</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#choose-your-favorite-distro" class="nav-link">Choose your favorite distro</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#_1" class="nav-link">选择桌面环境</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#start-installation" class="nav-link">Start installation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#_2" class="nav-link">制作安装介质</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#install-neccessary-software" class="nav-link">Install neccessary software</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#_3" class="nav-link">中文输入法</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#_4" class="nav-link">开机自动挂载磁盘</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#winscp-optional" class="nav-link">winscp (optional)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#handling-problems" class="nav-link">Handling problems</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#_8" class="nav-link">界面显示异常</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="set-up-linux">Set up Linux</h1>
+<h2 id="choose-your-favorite-distro">Choose your favorite distro</h2>
+<p>作为开源系统，Linux有诸多发行版本。选择你喜欢的版本或最受欢迎的版本（如Ubuntu, 更容易解决遇到的问题）即可。</p>
+<h3 id="_1">选择桌面环境</h3>
+<p>桌面环境即是你将直接看到的图形界面。无论选择何种发行版本，KDE和Gnome都是最受欢迎的选项。比较它们不同的风格做出选择。桌面环境可以在安装后更换。</p>
+<h2 id="start-installation">Start installation</h2>
+<h3 id="_2">制作安装介质</h3>
+<p>在官方网站或镜像站（清华源：https://mirrors.tuna.tsinghua.edu.cn）下载iso映像文件
+<img alt="sreenshot" src="image.png" /></p>
+<p>iso文件分为在线安装版和离线安装版。
+- 在线安装版体积较小，安装时选项较多，但要求安装时联网。而且由于你需要在进入系统前联网，你不能进行复杂的设置，很可能需要有线网络连接。
+- 离线安装版体积较大，下载时可能需要选择相应的桌面环境，仍然建议安装时联网以便获取更新、配置源以及安装额外软件。</p>
+<p>准备一个至少8GB的U盘，下载刻录工具（免费免安装的rufus： https://rufus.ie/）
+<img alt="alt text" src="image-1.png" /></p>
+<p>选择U盘和刚下载的iso文件，点击开始，稍等片刻，当进度条显示ready时制作完成，弹出U盘。</p>
+<h2 id="install-neccessary-software">Install neccessary software</h2>
+<blockquote>
+<p>⚠️ 以下安装软件的命令基于apt包管理器，适用于debian, ubuntu, linuxmint等，其他系统可能使用不同的包管理器，命令和包名称有所不同，需查询。</p>
+</blockquote>
+<h3 id="_3">中文输入法</h3>
+<p>若系统自带ibus或旧版的fcitx，卸载系统自带的输入法</p>
+<pre><code class="language-bash">sudo apt purge fcitx*
+sudo apt purge ibus*
+sudo apt autoremove
+</code></pre>
+<p>安装fcitx5拼音输入法</p>
+<pre><code class="language-bash">sudo apt install fcitx5 fcitx5-pinyin fcitx5-config-qt
+</code></pre>
+<p>设置为默认</p>
+<pre><code class="language-bash">im-config -n fcitx5
+</code></pre>
+<p>使更改生效</p>
+<pre><code class="language-bash">source ~/.profile
+</code></pre>
+<p>重新启动后才可以成功打出汉字</p>
+<h3 id="_4">开机自动挂载磁盘</h3>
+<p>当你的系统有多个硬盘或分区时，可能需要在开机时自动挂载它们。Linux通过<code>/etc/fstab</code>文件来配置开机自动挂载。</p>
+<h4 id="_5">查看硬盘信息</h4>
+<p>首先查看系统中的硬盘和分区信息</p>
+<pre><code class="language-bash">lsblk
+</code></pre>
+<p>或者查看UUID信息（推荐使用UUID挂载，更稳定）</p>
+<pre><code class="language-bash">sudo blkid
+</code></pre>
+<h4 id="_6">创建挂载点</h4>
+<p>为要挂载的硬盘创建目录</p>
+<pre><code class="language-bash">sudo mkdir /mnt/data  #data可改为你喜欢的硬盘名称
+</code></pre>
+<h4 id="fstab">编辑fstab文件</h4>
+<p>编辑<code>/etc/fstab</code>文件来配置自动挂载</p>
+<pre><code class="language-bash">sudo nano /etc/fstab
+</code></pre>
+<p>在文件末尾添加挂载配置，格式如下：</p>
+<pre><code>UUID=your-disk-uuid /mnt/data ext4 defaults 0 2
+</code></pre>
+<p>参数说明：
+- <code>UUID=your-disk-uuid</code>: 硬盘的UUID（从blkid命令获取）
+- <code>/mnt/data</code>: 挂载点路径，应与之前创建的目录一致
+- <code>ext4</code>: 文件系统类型（根据实际情况可能是ntfs、fat32等，但建议将硬盘格式化为ext4）
+- <code>defaults</code>: 挂载选项
+- <code>0</code>: dump选项（通常为0）
+- <code>2</code>: fsck检查顺序（根分区为1，其他为2，不检查为0）</p>
+<h4 id="_7">测试挂载配置</h4>
+<p>保存文件后，测试配置是否正确</p>
+<pre><code class="language-bash">sudo mount -a
+</code></pre>
+<p>如果没有错误信息，说明配置正确。可以用以下命令查看挂载状态：</p>
+<pre><code class="language-bash">df -h
+</code></pre>
+<p>重启系统后，硬盘将自动挂载到指定位置。</p>
+<h3 id="winscp-optional">winscp (optional)</h3>
+<p>使用你的windows电脑查看/linux上的文件，或将新的文件复制进来。
+接下来需要进入到Ubuntu中，查看一下是否开启OpenSSH服务</p>
+<pre><code class="language-bash">sudo systemctl status ssh
+</code></pre>
+<p>如果未安装ssh，需要安装ssh服务</p>
+<pre><code class="language-bash">sudo apt install openssh-server
+</code></pre>
+<p>安装后，启动ssh服务</p>
+<pre><code class="language-bash">sudo systemctl start ssh
+</code></pre>
+<p>然后再检查一下ssh服务状态，显示active就说明已经安装成功</p>
+<p>此时从windows端WinSCP新建连接，选择SFTP协议，输入linux设备的ip和用户名密码即可进入linux文件系统。</p>
+<h2 id="handling-problems">Handling problems</h2>
+<h3 id="_8">界面显示异常</h3>
+<p>睡眠唤醒后屏幕画面撕裂或花屏，重启显示管理器：</p>
+<p>想办法进入终端，执行以下命令之一：</p>
+<pre><code class="language-bash">#KDE 通常采用SDDM：
+sudo systemctl restart sddm 
+
+#Gnome 通常采用GDM
+sudo systemctl restart gdm 
+
+#其他可能采用lightdm
+sudo systemctl restart lightdm
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+                <p class="footer-p">© 2024-2025 Mirpri. Built with MkDocs.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
