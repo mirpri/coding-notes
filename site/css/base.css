@@ -232,6 +232,7 @@ footer {
     padding: 0;
     max-height: 90%;
     overflow-y: auto;
+    border: none !important;
 }
 
 /* Toggle (vertically flip) sidebar collapse icon */
@@ -473,4 +474,9 @@ details h4, details h5, details h6 {
     color: var(--bs-secondary-text-emphasis);
     margin: 0;
     padding: 0;
+}
+
+div#toc-collapse{
+    border: none !important;
+    box-shadow: 0 0 6px rgba(0,0,0,.1);
 }

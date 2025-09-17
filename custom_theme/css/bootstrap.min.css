@@ -13902,7 +13902,7 @@ fieldset:disabled .btn {
 }
 
 .navbar.bg-primary {    
-    background: linear-gradient(90deg, #ff9a9e, #fec7b8, #b8a4e9, #faade4, #ff9a9e, #fec7b8);
+    background: linear-gradient(90deg, #f39093, #ffbba8, #bda3ff, #eca1d7, #f39093, #ffbba8);
     background-size: 500% 200%;
     animation: gradientAnimation 15s linear infinite;
 }
@@ -13939,14 +13939,20 @@ fieldset:disabled .btn {
     background-image: linear-gradient(#545a5f, #343a40 60%, #31373c)
 }
 
-.nav-link,
+/* .nav-link,
 .navbar-brand {
     text-shadow: 0 1px 0 rgba(0, 0, 0, .05)
+} */
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+    font-weight: bold;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .2)
 }
 
-.btn {
+/* .btn {
     text-shadow: 0 1px 0 rgba(0, 0, 0, .05)
-}
+} */
 
 .btn-outline-secondary,
 .btn-secondary {

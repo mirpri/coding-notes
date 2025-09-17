@@ -94,15 +94,15 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../Web/JavaScript/" class="dropdown-item">JavaScript</a>
-</li>
-                                    
-<li>
-    <a href="../../Web/TypeScript/" class="dropdown-item">TypeScript Learning</a>
+    <a href="../../Web/javascript/" class="dropdown-item">JavaScript</a>
 </li>
                                     
 <li>
     <a href="../../Web/node/" class="dropdown-item">Node.js</a>
+</li>
+                                    
+<li>
+    <a href="../../Web/typescript/" class="dropdown-item">TypeScript Learning</a>
 </li>
                                 </ul>
                             </li>
@@ -152,6 +152,22 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#class-vs-struct" class="nav-link">Class vs Struct</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_2" class="nav-link">使用构造函数初始化对象</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#parentheses-initialization-vs-brace-initialization" class="nav-link">Parentheses initialization vs Brace initialization</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">重载</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -160,7 +176,10 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="c-features">C++ Features</h1>
-<p><em>This section focuses on features unique to c++</em></p>
+<blockquote>
+<p>📜<em>This section focuses on features unique to c++</em></p>
+</blockquote>
+<p>C的超集，<em>多继承</em>的强类型的混合型的OO(Object-oriented)语言</p>
 <h2 id="_1">传递引用类型的参数</h2>
 <p>函数原型中，可定义<strong>引用类型</strong>参数。</p>
 <pre><code class="language-cpp">void work(int &amp;x) {
@@ -191,7 +210,49 @@ for(int i:arr){
 <p>基于范围的 for 循环适用于：
 - 普通数组（如 int arr[5]）
 - 标准容器（如 vector, list, map 等）
-- 任何提供了 begin() 和 end() 方法的类型</p></div>
+- 任何提供了 begin() 和 end() 方法的类型</p>
+<h2 id="class-vs-struct">Class vs Struct</h2>
+<p>这两种结构体在C++几乎完全相同，只不过struct的成员变量默认为public而class的成员变量默认为private。</p>
+<pre><code class="language-cpp">class MyClass {
+    int privateData; // private by default
+public:
+    int publicData;
+};
+
+struct MyStruct {
+    int publicData;  // public by default
+private:
+    int privateData;
+};
+</code></pre>
+<p>传统上，struct 关键字用于将简单数据成员组合在一起而class 关键字用于定义具有更复杂行为且需要强封装的对象。</p>
+<h2 id="_2">使用构造函数初始化对象</h2>
+<p>在C++中，可使用构造函数来初始化变量/对象</p>
+<pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+  int x(1);        //Parentheses initialization
+  double y{1.2};   //Brace initialization
+  cout&lt;&lt;x&lt;&lt;endl&lt;&lt;y;
+  return 0;
+}
+</code></pre>
+<h3 id="parentheses-initialization-vs-brace-initialization"><em>Parentheses initialization</em> vs <em>Brace initialization</em></h3>
+<p>The Difference: <strong>Narrowing Conversions</strong>:<br />
+<code>int x(1.5);</code> will compile successfully but will truncate the value, resulting in x being 1.<br />
+<code>int x{1.5};</code> will cause a compile-time error. </p>
+<p>The <strong>brace initialization syntax</strong> is considered safer and is the recommended modern C++ practice.</p>
+<h2 id="_3">重载</h2>
+<p>C++支持函数重载与运算符重载</p>
+<p>运算符重载时，要求至少有一个操作数为自定义的数据类型。</p>
+<pre><code>bool operator+ (int a, int b){
+  return a*b;
+}
+</code></pre>
+<blockquote>
+<p>❌ Overloaded 'operator+' must have at least one parameter of class or enumeration type</p>
+</blockquote></div>
             </div>
         </div>
 
