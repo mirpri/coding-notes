@@ -3,6 +3,8 @@
 
 C的超集，*多继承*的强类型的混合型的OO(Object-oriented)语言
 
+详细的C++笔记见[Cpp-notes](../../Cpp-notes/)
+
 ## 传递引用类型的参数
 函数原型中，可定义**引用类型**参数。
 ```cpp
@@ -89,3 +91,29 @@ bool operator+ (int a, int b){
 }
 ```
 >❌ Overloaded 'operator+' must have at least one parameter of class or enumeration type
+
+# C++ 标准
+## 使用新的空指针 nullptr
+nullptr has type `std::nullptr_t`. It's implicitly convertible to any pointer type. Thus, it'll match std::nullptr_t or pointer types in overload resolution, but not other types such as int.
+
+0 (aka. C's NULL bridged over into C++) could cause **ambiguity in overloaded function resolution**, among other things
+
+```c++
+#include <iostream>
+using namespace std;
+
+void fun(int x){
+  cout<<"int x: "<<x<<endl;
+}
+
+void fun(int* p){
+  cout<<"pointer p: "<<p<<endl;
+}
+
+int main(){
+  fun(0); // int x: 0
+  fun(nullptr); // pointer p: 0
+  // fun(NULL); //THIS CAUSE ERROR
+  return 0;
+}
+```

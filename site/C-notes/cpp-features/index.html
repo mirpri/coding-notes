@@ -51,6 +51,15 @@
                                 <a href="../.." class="nav-link">Welcome</a>
                             </li>
                             <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Advanced C++</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Advanced%20C%2B%2B/Class/" class="dropdown-item">Class</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">C notes</a>
                                 <ul class="dropdown-menu">
                                     
@@ -115,7 +124,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../.." class="nav-link">
+                                <a rel="prev" href="../../Advanced%20C%2B%2B/Class/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -165,6 +174,15 @@
               </ul>
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">重载</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#c" class="nav-link">C++ 标准</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#nullptr" class="nav-link">使用新的空指针 nullptr</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -252,7 +270,29 @@ int main(){
 </code></pre>
 <blockquote>
 <p>❌ Overloaded 'operator+' must have at least one parameter of class or enumeration type</p>
-</blockquote></div>
+</blockquote>
+<h1 id="c">C++ 标准</h1>
+<h2 id="nullptr">使用新的空指针 nullptr</h2>
+<p>nullptr has type <code>std::nullptr_t</code>. It's implicitly convertible to any pointer type. Thus, it'll match std::nullptr_t or pointer types in overload resolution, but not other types such as int.</p>
+<p>0 (aka. C's NULL bridged over into C++) could cause <strong>ambiguity in overloaded function resolution</strong>, among other things</p>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+using namespace std;
+
+void fun(int x){
+  cout&lt;&lt;&quot;int x: &quot;&lt;&lt;x&lt;&lt;endl;
+}
+
+void fun(int* p){
+  cout&lt;&lt;&quot;pointer p: &quot;&lt;&lt;p&lt;&lt;endl;
+}
+
+int main(){
+  fun(0); // int x: 0
+  fun(nullptr); // pointer p: 0
+  // fun(NULL); //THIS CAUSE ERROR
+  return 0;
+}
+</code></pre></div>
             </div>
         </div>
 

@@ -1,4 +1,4 @@
-# VS Code *Portable* for C++
+# VS Code *Portable* for C/C++
 >🔮 *"The right tools make the magic happen."*
 
 Try out my portable, self-contained **VS Code C++ programming environment**.

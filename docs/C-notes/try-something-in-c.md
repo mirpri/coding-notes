@@ -360,7 +360,7 @@ const int * const p; //指向整型常量的常指针
 
 >⚠️
 >
->`const int *p`定义的是指向整型常量的指针变量，整型常量本身不能修改，但指针可以修改，指向其他地址。例如，以下的这段代码能够正常运行：
+>`const int *p` / `int const *p`定义的是指向整型常量的指针变量，整型常量本身不能修改，但指针可以修改，指向其他地址。例如，以下的这段代码能够正常运行：
 
 ```c
 #include <stdio.h>
@@ -369,6 +369,21 @@ int main() {
     p++;
     printf("%c",*p);
     return 0;
+}
+```
+
+## 增加属性与去除属性
+指针可以增加属性，不可去除属性 (const, volatile)
+```C
+int a;
+const int b=100;
+
+int main(){
+  const int * p=&a; //增加属性，OK
+  int * q=&b; //去除属性const，ERROR
+
+  *p=100; //不能通过p修改a，ERROR
+  return 0;
 }
 ```
 
