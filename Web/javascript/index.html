@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>JavaScript - My Coding Notes</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+    
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-33SKNTLRN6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-33SKNTLRN6');
+    </script>
+
+
+    <body>
+        <div class="white-shade"></div>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">My Coding Notes</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Welcome</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">C notes</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../C-notes/cpp-features/" class="dropdown-item">C++ Features</a>
+</li>
+                                    
+<li>
+    <a href="../../C-notes/elegant-codes/" class="dropdown-item">Elegant Codes</a>
+</li>
+                                    
+<li>
+    <a href="../../C-notes/try-something-in-c/" class="dropdown-item">Try something in C</a>
+</li>
+                                    
+<li>
+    <a href="../../C-notes/vscode-for-cpp/" class="dropdown-item">VS Code Portable for C/C++</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Cpp notes</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Cpp-notes/" class="dropdown-item">C++ notes</a>
+</li>
+                                    
+<li>
+    <a href="../../Cpp-notes/class/" class="dropdown-item">Class</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Deep Learning</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Deep-Learning/pytorch/" class="dropdown-item">Deep learning with PyTorch</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Linux</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../Linux/" class="dropdown-item">Set up Linux</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Web</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">JavaScript</a>
+</li>
+                                    
+<li>
+    <a href="../node/" class="dropdown-item">Node.js</a>
+</li>
+                                    
+<li>
+    <a href="../typescript/" class="dropdown-item">TypeScript Learning</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../Linux/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../node/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary" >
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span> Table of Contents
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary" style="max-height: 70vh; overflow-y: auto;">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#javascript" class="nav-link">JavaScript</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#deciding-let-or-var" class="nav-link">Deciding let or var</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#type" class="nav-link">type</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#checking-types" class="nav-link">Checking types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#and-compared" class="nav-link">== and === compared</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#array" class="nav-link">Array</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#create" class="nav-link">Create</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#promise" class="nav-link">Promise</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#creating-a-promise-chain" class="nav-link">Creating a promise chain</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#then-and-catch" class="nav-link">then and catch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#proccessing-multiple-promises" class="nav-link">Proccessing multiple promises</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#summary" class="nav-link">Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#event-loop" class="nav-link">Event Loop</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#comparing-asynchronous-apis-task-vs-microtask-priority" class="nav-link">Comparing Asynchronous APIs: Task vs Microtask Priority</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="javascript">JavaScript</h1>
+<blockquote>
+<p>📜 <strong>Reference</strong></p>
+<p><a href="https://www.javascripttutorial.net/es6/">ES6 Tutorial</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN web docs</a></p>
+</blockquote>
+<h2 id="deciding-let-or-var">Deciding <code>let</code> or <code>var</code></h2>
+<p><code>let</code> is <strong>block-scoped</strong> and should be used in modern JavaScript for variable declarations. It prevents issues like variable hoisting and accidental re-declarations.<br />
+<code>var</code> is <strong>function-scoped</strong> and declarations are hoisted to the top of their scope, meaning you can use a var variable before its declaration in the code (though it will have a value of undefined). It is generally avoided in modern code due to its less predictable behavior.</p>
+<p><strong>Prefer let or const over var</strong>: let and const provide better scope management and are more explicit about variable mutability (whether the value can be changed).</p>
+<pre><code class="language-js">for(let v=0;v&lt;5;v++){
+    setTimeout(() =&gt; {
+        console.log(v);
+    }, 1000);
+}
+</code></pre>
+<p>output: <code>0 1 2 3 4</code></p>
+<pre><code class="language-js">for(var v=0;v&lt;5;v++){
+    setTimeout(() =&gt; {
+        console.log(v);
+    }, 1000);
+}
+</code></pre>
+<p>output: <code>5 5 5 5 5</code></p>
+<h2 id="type">type</h2>
+<p>JavaScript uses dynamic typing. Variable's type is set when you assign a value to it and be automatically coverted during operations.</p>
+<p>You cannot explicitly assign types to variables. (<a href="../typescript">TypeScript</a> can do that!)</p>
+<blockquote>
+<p>🧩 Dynamic typing provides convenience and flexibility but may also lead to confusion. Some TypeScript will be used in this document to annotate types to make it clearer.</p>
+</blockquote>
+<h3 id="checking-types">Checking types</h3>
+<p>use <code>typeof variable</code> to check the type.</p>
+<pre><code class="language-js">console.log(typeof 10) // number
+console.log(typeof &quot;10&quot;) // string
+console.log(typeof true) // boolean
+console.log(typeof undefined) // undefined
+console.log(typeof null) // object
+
+let a=&quot;10&quot;
+let b=10
+console.log(typeof a) // string
+console.log(typeof b) // number
+console.log(typeof (a+b)) // string
+console.log(typeof (a-b)) // number
+</code></pre>
+<h3 id="and-compared"><code>==</code> and <code>===</code> compared</h3>
+<p><code>==</code> performs <strong>type coercion</strong>, meaning it converts the operands to the same type before comparing.<br />
+<code>===</code> is a strict equality operator that compares both value and type, making it more predictable and preferred in most cases.</p>
+<h2 id="array">Array</h2>
+<p>Arrays in JavaScript are used to store multiple values in a single variable. They are zero-indexed and come with built-in methods like <code>push</code>, <code>pop</code>, <code>map</code>, <code>filter</code>, and <code>reduce</code> for manipulation.</p>
+<p>JavaScript arrays are resizable and <strong>can contain a mix of different data types</strong>. (When those characteristics are undesirable, use typed arrays instead.)</p>
+<h3 id="create">Create</h3>
+<p>Creating an array with size 10:</p>
+<pre><code class="language-js">let a=Array(10); // array of 10 empty slots
+let b=Array(10).fill(0); // array of 10 zeros
+</code></pre>
+<p><code>a=Array(10)</code> is the same as:</p>
+<pre><code class="language-js">let a=[];
+a.length=10;
+//a.fill(0) won't work here!
+</code></pre>
+<p>Both ways create an array with 10 empty slots — not undefined, not null, just empty (sparse).</p>
+<h2 id="promise">Promise</h2>
+<p>A JavaScript Promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. It's a way to handle operations that might take some time to complete, like fetching data from an API or reading a file.</p>
+<p>Here is an simple example:</p>
+<pre><code class="language-ts">function judgeOddNumber(x: number) {
+  return new Promise&lt;string&gt;((resolve, reject) =&gt; {
+    if (x % 2 !== 0) {
+      resolve(x+&quot; is odd number&quot;); //simulate success
+    }
+    else {
+      reject(x+&quot; is even number&quot;); //simulate an error
+    }
+  });
+}
+
+
+// const promise = hi;
+function successCallback(result: string) {
+  console.log(`success: ${result}`);
+}
+
+function failureCallback(error: string) {
+  console.error(`error: ${error}`);
+}
+
+judgeOddNumber(3).then(successCallback, failureCallback);
+judgeOddNumber(10).then(successCallback, failureCallback);
+</code></pre>
+<p><code>Promise</code> objects manage asynchronous execution flow based on operation outcomes. When the operation succeeds and <code>resolve()</code> is invoked, the Promise transitions to fulfilled state, executing the first callback passed to <code>.then()</code> (in this example, <code>successCallback</code>). Conversely, when the operation fails and <code>reject()</code> is called, the Promise enters rejected state, triggering the second callback in <code>.then()</code> (here, <code>failureCallback</code>). </p>
+<h3 id="creating-a-promise-chain">Creating a promise chain</h3>
+<pre><code class="language-ts">function addOne(x: number) {
+  return new Promise&lt;number&gt;((resolve, reject) =&gt; {
+    if (x &gt; 0) resolve(x + 1);
+    else reject(&quot;x is not positive&quot;);
+  });
+}
+
+function multiplyByTwo(x: number) {
+  return new Promise&lt;number&gt;((resolve, reject) =&gt; {
+    if (x &gt; 0) resolve(x * 2);
+    else reject(&quot;x is not positive&quot;);
+  });
+}
+
+function outputResult(result: number) {
+  console.log(`The result is ${result}`);
+}
+
+function outputError(error: string) {
+  console.error(`Error: ${error}`);
+}
+
+addOne(5).then(multiplyByTwo).then(addOne)
+  .then(outputResult).catch(outputError);
+// (5+1)*2+1=13
+
+addOne(-5).then(multiplyByTwo).then(addOne)
+  .then(outputResult).catch(outputError);
+// Error
+</code></pre>
+<h3 id="then-and-catch"><code>then</code> and <code>catch</code></h3>
+<p>You can use the second parameter of <code>.then()</code> or <code>.catch()</code> to handle errors.</p>
+<p>Use <code>.catch()</code> at the end of a chain to provide centralized error handling is cleaner and avoids repetitive error handling code.
+Use <code>.then()</code> with Two Parameters for Local Error Handling immediately within the same <code>.then()</code>.</p>
+<p>Priorty:
+- The first parameter of <code>.then()</code> (the success handler) has the highest priority. It is called if the Promise resolves successfully.
+- The second parameter of <code>.then()</code> (the failure handler) has the next highest priority. It is called if the Promise rejects and a failure handler is provided.
+- The trailing <code>.catch()</code> has the lowest priority. It is used to handle failures and catches errors from anywhere in the chain, including errors thrown in the success handlers of .then().</p>
+<pre><code class="language-ts">function output1() { console.log(&quot;output1!&quot;); }
+function output2() { console.log(&quot;output2!&quot;); }
+function output3() { console.log(&quot;output3!&quot;); }
+
+addOne(-5).then(output1, output2).catch(output3);
+// output2!
+</code></pre>
+<h3 id="proccessing-multiple-promises">Proccessing multiple promises</h3>
+<p>JavaScript provides several methods to work with multiple Promises simultaneously. These methods allow you to manage and process asynchronous operations efficiently:</p>
+<pre><code class="language-js">let p1 = new Promise((resolve) =&gt; {
+    setTimeout(() =&gt; {
+        resolve(&quot;p1 resolved after 1 second&quot;);
+    }, 1000);
+});
+
+let p2 = new Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; {
+        reject(&quot;p2 rejected after 2 seconds&quot;);
+    }, 2000);
+});
+
+let p3 = new Promise((resolve) =&gt; {
+    setTimeout(() =&gt; {
+        resolve(&quot;p3 resolved after 3 seconds&quot;);
+    }, 3000);
+});
+
+function rejected(s) {
+    console.log(&quot;Promise rejected: &quot;, s);
+}
+function resolved(s) {
+    console.log(&quot;Promise rejected: &quot;, s);
+}
+
+Promise.all([p1, p2, p3]).then(resolved, rejected); //p2 rejected after 2 seconds
+Promise.any([p1, p2, p3]).then(resolved, rejected); //p1 resolved after 1 second
+Promise.race([p1, p2, p3]).then(resolved, rejected); //p1 resolved after 1 second
+Promise.allSettled([p1, p2, p3]).then(resolved, rejected); 
+/* Promise rejected:  [
+  { status: 'fulfilled', value: 'p1 resolved after 1 second' },
+  { status: 'rejected', reason: 'p2 rejected after 2 seconds' },
+  { status: 'fulfilled', value: 'p3 resolved after 3 seconds' }
+]*/
+</code></pre>
+<h3 id="summary">Summary</h3>
+<p>JavaScript Promises offer several key benefits when dealing with asynchronous operations:</p>
+<p><strong>1. Improved Readability and Maintainability:</strong></p>
+<ul>
+<li>
+<p>flatten nested callback, avoid <em>"Callback Hell"</em> structures. </p>
+</li>
+<li>
+<p>chaining with .then() provides a clear, sequential flow for asynchronous operations. </p>
+</li>
+</ul>
+<p><strong>2. Enhanced Error Handling:</strong></p>
+<ul>
+<li>
+<p>Centralized Error Catching with <code>.catch()</code> at the end</p>
+</li>
+<li>
+<p>Provide a consistent way to handle errors in asynchronous code. </p>
+</li>
+</ul>
+<p><strong>3. Facilitates Asynchronous Code Management:</strong></p>
+<ul>
+<li>Chain multiple asynchronous operations in a specific order. </li>
+</ul>
+<p>Parallel Execution (with Promise.all()): You can run multiple asynchronous tasks concurrently using Promise.all() and wait for all of them to resolve before proceeding. </p>
+<ul>
+<li>Allow for more flexible composition of asynchronous operations. </li>
+</ul>
+<p><strong>4. Integration with Modern Features:</strong></p>
+<ul>
+<li><em>Foundation for the async/await syntax</em>, which simplifies asynchronous code further. </li>
+</ul>
+<h2 id="event-loop">Event Loop</h2>
+<p><img alt="alt text" src="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model/runtime-environment-diagram.svg" /></p>
+<p>If the code needs to perform asynchronous action, that halts the whole program—the nature of JavaScript as a web scripting language requires it to be never blocking. Therefore, the code that handles the completion of that asynchronous action is defined as a callback. This callback defines a job, which gets placed into a job queue—or, in HTML terminology, an event loop—once the action is completed.</p>
+<p>Every time, the agent pulls a job from the queue and executes it. When the job is executed, it may create more jobs, which are added to the end of the queue. Jobs can also be added via the completion of asynchronous platform mechanisms, such as timers, I/O, and events. A job is considered completed when the stack is empty; then, the next job is pulled from the queue. Jobs might not be pulled with uniform priority—for example, HTML event loops split jobs into two categories: tasks and microtasks. Microtasks have higher priority and the microtask queue is drained first before the task queue is pulled. For more information, check the HTML microtask guide. If the job queue is empty, the agent waits for more jobs to be added.</p>
+<h3 id="comparing-asynchronous-apis-task-vs-microtask-priority">Comparing Asynchronous APIs: Task vs Microtask Priority</h3>
+<p>JavaScript has several ways to schedule asynchronous code execution, each with different priority levels in the event loop:</p>
+<pre><code class="language-js">console.log(&quot;Script start&quot;);
+
+setTimeout(() =&gt; console.log(&quot;setTimeout&quot;), 0);
+
+Promise.resolve()
+  .then(() =&gt; console.log(&quot;Promise 1&quot;))
+  .then(() =&gt; console.log(&quot;Promise 2&quot;));
+
+queueMicrotask(() =&gt; console.log(&quot;queueMicrotask&quot;));
+
+console.log(&quot;Script end&quot;);
+
+// Output:
+// Script start
+// Script end
+// Promise 1
+// queueMicrotask
+// Promise 2
+// setTimeout
+</code></pre>
+<h4 id="priority-order-highest-to-lowest">Priority Order (highest to lowest):</h4>
+<ol>
+<li>
+<p><strong>Synchronous code</strong>: Always runs first and blocks execution until complete</p>
+<ul>
+<li>Example: <code>console.log("Script start")</code>, <code>console.log("Script end")</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Microtasks</strong>: Run after synchronous code and before rendering or tasks</p>
+<ul>
+<li><strong>Promise callbacks</strong>: <code>.then()</code>, <code>.catch()</code>, <code>.finally()</code></li>
+<li><strong>queueMicrotask()</strong>: Explicitly queue a function as a microtask</li>
+<li><strong>MutationObserver callbacks</strong>: From DOM changes</li>
+</ul>
+</li>
+<li>
+<p><strong>Tasks (Macrotasks)</strong>: Run after all microtasks are processed</p>
+<ul>
+<li><strong>setTimeout/setInterval</strong>: Timer-based callbacks</li>
+<li><strong>DOM event callbacks</strong>: User interactions (clicks, keyboard events)</li>
+<li><strong>requestAnimationFrame</strong>: Visual updates (runs before rendering)</li>
+</ul>
+</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+                <p class="footer-p">© 2024-2025 Mirpri. Built with MkDocs.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
