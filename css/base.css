@@ -405,6 +405,10 @@ details h4, details h5, details h6 {
         overflow-y: auto;
         max-height: calc(100vh - 3.5rem);
     }
+
+    .nav-hide-on-small {
+        display:contents;
+    }
 }
 
 .dropdown-item.open {
@@ -461,6 +465,16 @@ details h4, details h5, details h6 {
     .dropdown-submenu.pull-left > .dropdown-menu {
         left: -100%;
         margin-left: 10px;
+    }
+}
+
+.nav-hide-on-small {
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    .nav-hide-on-small {
+        display: contents;
     }
 }
 
