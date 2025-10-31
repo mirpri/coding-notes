@@ -494,3 +494,19 @@ div#toc-collapse{
     border: none !important;
     box-shadow: 0 0 6px rgba(0,0,0,.1);
 }
+
+.migration-notice {
+    width: 100%;
+    background-color: #ffda48;
+    color: #000;
+    text-align: center;
+    z-index: 10000;
+    height: 3rem;
+    margin:10px;
+}
+
+.migration-notice p {
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
+}
